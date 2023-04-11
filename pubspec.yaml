@@ -40,7 +40,7 @@ dependencies:
   flutter_native_splash: ^2.2.19
 
 flutter_native_splash:
-  background_image: assets/images/splash.png
+  image: assets/images/splash.png
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +76,7 @@ flutter:
     - assets/images/pulsing_heart.png
     - assets/images/qr_code.png
     - assets/images/shop.png
+    - assets/images/slider.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

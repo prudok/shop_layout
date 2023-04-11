@@ -6,5 +6,6 @@ class AssetPaths {
   static const String pulsingHeart = 'assets/images/pulsing_heart.png';
   static const String qrCode = 'assets/images/qr_code.png';
   static const String shop = 'assets/images/shop.png';
-  static const String MarkPro = 'assets/fonts/MarkPro.ttf';
+  static const String slider = 'assets/images/slider.png';
+  static const String markPro = 'assets/fonts/MarkPro.ttf';
 }
