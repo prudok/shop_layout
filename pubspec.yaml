@@ -38,6 +38,9 @@ dependencies:
   json_annotation: ^4.8.0
   flutter_screenutil: ^5.7.0
   flutter_native_splash: ^2.2.19
+  flutter_bloc: ^8.1.2
+  path_provider: ^2.0.14
+  collection: ^1.17.1
 
 flutter_native_splash:
   image: assets/images/splash.png
