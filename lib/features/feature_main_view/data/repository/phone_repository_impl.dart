@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
-import '../../domain/entities/phone/phone.dart';
+import '../../domain/entities/home_store_phone/home_store_phone.dart';
 import '../../domain/repository/phone_repository.dart';
 import '../datasource/files/files.dart';
 import '../datasource/files/files_impl.dart';
@@ -10,14 +10,14 @@ import '../datasource/files/files_impl.dart';
 class PhoneRepositoryImpl extends PhoneRepository {
   Files files = FilesImpl();
   @override
-  Future<List<Phone>> getPhones() async {
+  Future<List<HomeStorePhone>> getPhones() async {
     final phones = await files.read();
-    return jsonDecode(phones).map((phone) => Phone.fromJson(phone)).toList();
+    return jsonDecode(phones).map((phone) => HomeStorePhone.fromJson(phone)).toList();
   }
 
   @override
-  Future<void> addPhone(Phone phone) async {
-    List<Phone> phones =
+  Future<void> addPhone(HomeStorePhone phone) async {
+    List<HomeStorePhone> phones =
         await files.read().then((phones) => jsonDecode(phones));
     final existingPhone = phones.firstWhereOrNull((ph) => ph.id == phone.id);
     if (existingPhone == null) {
@@ -32,8 +32,6 @@ class PhoneRepositoryImpl extends PhoneRepository {
         pictureUrl: existingPhone.pictureUrl,
         isBuy: existingPhone.isBuy,
         isFavorite: existingPhone.isFavorite,
-        priceWithoutDiscount: existingPhone.priceWithoutDiscount,
-        discountPrice: existingPhone.discountPrice,
       );
       final newPhones =
           phones.map((ph) => ph.id == phone.id ? newPhone : ph).toList();
@@ -49,7 +47,7 @@ class PhoneRepositoryImpl extends PhoneRepository {
   }
 
   @override
-  Future<Phone> getPhone(String id) {
+  Future<HomeStorePhone> getPhone(String id) {
     // TODO: implement getPhone
     throw UnimplementedError();
   }
