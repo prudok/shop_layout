@@ -5,6 +5,7 @@ import '../../../../core/constants/app_colors/app_colors.dart';
 import '../widgets/category_options.dart';
 import '../widgets/category_title.dart';
 import '../widgets/geo_location_info.dart';
+import '../widgets/searching_line.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -25,6 +26,10 @@ class HomeView extends StatelessWidget {
             child: const CategoryTitle(),
           ),
           const CategoryOptions(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: const SearchingLine(),
+          ),
         ],
       ),
     );

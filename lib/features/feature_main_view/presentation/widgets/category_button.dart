@@ -6,11 +6,11 @@ import '../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../../../core/constants/asset_paths/asset_paths.dart';
 
 class CategoryButton extends StatelessWidget {
-  const CategoryButton({super.key, required this.title, required this.imagePath});
+  const CategoryButton(
+      {super.key, required this.title, required this.imagePath});
 
   final String title;
   final String imagePath;
-
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,8 @@ class CategoryButton extends StatelessWidget {
             imagePath,
             width: 30.w,
             height: 30.h,
+            //TODO: Fix
+            color: Colors.grey,
           ),
         ),
         SizedBox(

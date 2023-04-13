@@ -9,5 +9,6 @@ class AssetPaths {
   static const String shop = 'assets/images/shop.png';
   static const String slider = 'assets/images/slider.png';
   static const String smartPhone = 'assets/images/smartphone.png';
+  static const String magnifier = 'assets/images/magnifier.png';
   static const String markPro = 'assets/fonts/MarkPro.ttf';
 }
