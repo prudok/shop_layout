@@ -16,7 +16,7 @@ class SearchingLine extends StatelessWidget {
       children: [
         Container(
           width: 285.w,
-          height: 34.h,
+          height: 42.h,
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(30.r),
