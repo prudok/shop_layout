@@ -280,21 +280,27 @@ mixin _$PhoneSellerState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -379,7 +385,9 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)
+        loaded,
   }) {
     return initial();
   }
@@ -389,7 +397,9 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
   }) {
     return initial?.call();
   }
@@ -399,7 +409,9 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -486,7 +498,9 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)
+        loaded,
   }) {
     return loading();
   }
@@ -496,7 +510,9 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
   }) {
     return loading?.call();
   }
@@ -506,7 +522,9 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -558,6 +576,10 @@ abstract class _Loading implements PhoneSellerState {
 abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {List<HomeStorePhone> homeStorePhones,
+      List<BestSellerPhone> bestSellerPhones});
 }
 
 /// @nodoc
@@ -566,35 +588,92 @@ class __$$_LoadedCopyWithImpl<$Res>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeStorePhones = null,
+    Object? bestSellerPhones = null,
+  }) {
+    return _then(_$_Loaded(
+      null == homeStorePhones
+          ? _value._homeStorePhones
+          : homeStorePhones // ignore: cast_nullable_to_non_nullable
+              as List<HomeStorePhone>,
+      null == bestSellerPhones
+          ? _value._bestSellerPhones
+          : bestSellerPhones // ignore: cast_nullable_to_non_nullable
+              as List<BestSellerPhone>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded();
+  const _$_Loaded(
+      [final List<HomeStorePhone> homeStorePhones = const [],
+      final List<BestSellerPhone> bestSellerPhones = const []])
+      : _homeStorePhones = homeStorePhones,
+        _bestSellerPhones = bestSellerPhones;
+
+  final List<HomeStorePhone> _homeStorePhones;
+  @override
+  @JsonKey()
+  List<HomeStorePhone> get homeStorePhones {
+    if (_homeStorePhones is EqualUnmodifiableListView) return _homeStorePhones;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_homeStorePhones);
+  }
+
+  final List<BestSellerPhone> _bestSellerPhones;
+  @override
+  @JsonKey()
+  List<BestSellerPhone> get bestSellerPhones {
+    if (_bestSellerPhones is EqualUnmodifiableListView)
+      return _bestSellerPhones;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bestSellerPhones);
+  }
 
   @override
   String toString() {
-    return 'PhoneSellerState.loaded()';
+    return 'PhoneSellerState.loaded(homeStorePhones: $homeStorePhones, bestSellerPhones: $bestSellerPhones)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loaded);
+        (other.runtimeType == runtimeType &&
+            other is _$_Loaded &&
+            const DeepCollectionEquality()
+                .equals(other._homeStorePhones, _homeStorePhones) &&
+            const DeepCollectionEquality()
+                .equals(other._bestSellerPhones, _bestSellerPhones));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_homeStorePhones),
+      const DeepCollectionEquality().hash(_bestSellerPhones));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)
+        loaded,
   }) {
-    return loaded();
+    return loaded(homeStorePhones, bestSellerPhones);
   }
 
   @override
@@ -602,9 +681,11 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
   }) {
-    return loaded?.call();
+    return loaded?.call(homeStorePhones, bestSellerPhones);
   }
 
   @override
@@ -612,11 +693,13 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(List<HomeStorePhone> homeStorePhones,
+            List<BestSellerPhone> bestSellerPhones)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(homeStorePhones, bestSellerPhones);
     }
     return orElse();
   }
@@ -657,5 +740,13 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements PhoneSellerState {
-  const factory _Loaded() = _$_Loaded;
+  const factory _Loaded(
+      [final List<HomeStorePhone> homeStorePhones,
+      final List<BestSellerPhone> bestSellerPhones]) = _$_Loaded;
+
+  List<HomeStorePhone> get homeStorePhones;
+  List<BestSellerPhone> get bestSellerPhones;
+  @JsonKey(ignore: true)
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }

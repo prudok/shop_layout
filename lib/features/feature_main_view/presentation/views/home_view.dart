@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
+import 'package:shop_layout/features/feature_main_view/domain/entities/best_seller_phone/best_seller_phone.dart';
+import 'package:shop_layout/features/feature_main_view/presentation/bloc/phone_seller_bloc.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../widgets/category_options.dart';
@@ -14,6 +16,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = PhoneSellerBloc();
+    
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
       body: ListView(
@@ -33,31 +37,31 @@ class HomeView extends StatelessWidget {
             child: const SearchingLine(),
           ),
           SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
+                child: Text(
                   'Hot Sales',
                   style: AppTextStyles.titleLarge.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                  width: 200.w,
-                  height: 250.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: const HotSalePreview(),
-                    ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 250.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) => const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: HotSalePreview(),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
