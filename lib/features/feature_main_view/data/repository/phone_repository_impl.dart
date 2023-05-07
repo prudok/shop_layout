@@ -1,3 +1,6 @@
+import 'package:shop_layout/features/feature_main_view/data/datasource/phone_api/phone_api.dart';
+import 'package:shop_layout/features/feature_main_view/data/datasource/phone_api/phone_api_impl.dart';
+
 import '../../domain/entities/best_seller_phones/best_seller_phone/best_seller_phone.dart';
 import '../../domain/entities/best_seller_phones/best_seller_phone_list/best_seller_phone_list.dart';
 import '../../domain/entities/home_store_phones/home_store_phone/home_store_phone.dart';
@@ -5,6 +8,10 @@ import '../../domain/entities/home_store_phones/home_store_phone_list/home_store
 import '../../domain/repository/phone_repository.dart';
 
 class PhoneRepositoryImpl extends PhoneRepository {
+  final PhoneAPI phoneAPI;
+
+  PhoneRepositoryImpl(this.phoneAPI);
+
   @override
   Future<void> addBestSellerPhone(BestSellerPhone phone) {
     // TODO: implement addBestSellerPhone
@@ -36,9 +43,8 @@ class PhoneRepositoryImpl extends PhoneRepository {
   }
 
   @override
-  Future<BestSellerPhoneList> getBestSellerPhones() {
-    // TODO: implement getBestSellerPhones
-    throw UnimplementedError();
+  Future<BestSellerPhoneList> getBestSellerPhones() async {
+    return await phoneAPI.loadBestSellerPhones();
   }
 
   @override
@@ -48,8 +54,7 @@ class PhoneRepositoryImpl extends PhoneRepository {
   }
 
   @override
-  Future<HomeStorePhoneList> getHomeStorePhones() {
-    // TODO: implement getHomeStorePhones
-    throw UnimplementedError();
+  Future<HomeStorePhoneList> getHomeStorePhones() async {
+    return await phoneAPI.loadHomeStorePhones();
   }
 }

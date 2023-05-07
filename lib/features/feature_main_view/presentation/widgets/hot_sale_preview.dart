@@ -9,7 +9,7 @@ class HotSalePreview extends StatelessWidget {
       children: [
         Container(
           width: 200,
-          height: 43,
+          height: 200,
           color: Colors.red,
         )
       ]

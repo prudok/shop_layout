@@ -16,9 +16,15 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = PhoneSellerBloc();
-    
+
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          bloc.add(const PhoneSellerEvent.load());
+        },
+        child: const Icon(Icons.update),
+      ),
       body: ListView(
         children: [
           SizedBox(height: 10.h),
@@ -48,9 +54,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: 250.h,
+                height: 450.h,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
