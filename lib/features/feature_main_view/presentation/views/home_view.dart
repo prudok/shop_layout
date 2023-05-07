@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
-import 'package:shop_layout/features/feature_main_view/domain/entities/best_seller_phone/best_seller_phone.dart';
-import 'package:shop_layout/features/feature_main_view/presentation/bloc/phone_seller_bloc.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../bloc/phone_seller_bloc.dart';
 import '../widgets/category_options.dart';
 import '../widgets/category_title.dart';
 import '../widgets/geo_location_info.dart';
