@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
@@ -15,13 +16,13 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = PhoneSellerBloc();
+    final phoneSellerBloc = context.watch<PhoneSellerBloc>();
 
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          bloc.add(const PhoneSellerEvent.load());
+          phoneSellerBloc.add(const PhoneSellerEvent.load());
         },
         child: const Icon(Icons.update),
       ),
@@ -62,7 +63,7 @@ class HomeView extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) => const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: HotSalePreview(),
+                    // child: HotSalePreview(),
                   ),
                 ),
               ),

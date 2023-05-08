@@ -5,6 +5,6 @@ class PhoneSellerState with _$PhoneSellerState {
   const factory PhoneSellerState.initial() = _Initial;
   const factory PhoneSellerState.loading() = _Loading;
   const factory PhoneSellerState.loaded(
-      [@Default([]) List<HomeStorePhone> homeStorePhones,
-      @Default([]) List<BestSellerPhone> bestSellerPhones]) = _Loaded;
+      [HomeStorePhoneList? homeStorePhones,
+      BestSellerPhoneList? bestSellerPhones]) = _Loaded;
 }
