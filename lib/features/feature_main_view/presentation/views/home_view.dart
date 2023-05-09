@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../domain/entities/phones/phones.dart';
 import '../bloc/phone_seller_bloc.dart';
 import '../widgets/category_options.dart';
 import '../widgets/category_title.dart';
@@ -17,6 +18,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final phoneSellerBloc = context.watch<PhoneSellerBloc>();
+    final phoneSellerState = phoneSellerBloc.state;
 
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
@@ -55,17 +57,25 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 450.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) => const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    // child: HotSalePreview(),
-                  ),
-                ),
+                child: phoneSellerState.when(initial: () {
+                  return null;
+                }, loading: () {
+                  return const CircularProgressIndicator();
+                }, loaded: (Phones phones) {
+                  return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: phones.bestSellerPhones!.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: HotSalePreview(
+                        phone: phones.bestSellerPhones![index],
+                      ),
+                    ),
+                  );
+                }),
               ),
             ],
           ),

@@ -7,11 +7,12 @@ part 'home_store_phone.g.dart';
 @freezed
 class HomeStorePhone with _$HomeStorePhone {
   const factory HomeStorePhone({
-    required String id,
+    required int id,
     required String title,
     required String subtitle,
-    required String pictureUrl,
-    @Default(false) bool isBuy,
+    @JsonKey(name: 'picture') required String pictureUrl,
+    @JsonKey(name: 'is_new') bool? isNew,
+    @JsonKey(name: 'is_buy') bool? isBuy,
     @Default(false) bool isFavorite,
   }) = _HomeStorePhone;
 

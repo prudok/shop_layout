@@ -20,11 +20,15 @@ HomeStorePhone _$HomeStorePhoneFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HomeStorePhone {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get subtitle => throw _privateConstructorUsedError;
+  @JsonKey(name: 'picture')
   String get pictureUrl => throw _privateConstructorUsedError;
-  bool get isBuy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_new')
+  bool? get isNew => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_buy')
+  bool? get isBuy => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,11 +44,12 @@ abstract class $HomeStorePhoneCopyWith<$Res> {
       _$HomeStorePhoneCopyWithImpl<$Res, HomeStorePhone>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
       String subtitle,
-      String pictureUrl,
-      bool isBuy,
+      @JsonKey(name: 'picture') String pictureUrl,
+      @JsonKey(name: 'is_new') bool? isNew,
+      @JsonKey(name: 'is_buy') bool? isBuy,
       bool isFavorite});
 }
 
@@ -65,14 +70,15 @@ class _$HomeStorePhoneCopyWithImpl<$Res, $Val extends HomeStorePhone>
     Object? title = null,
     Object? subtitle = null,
     Object? pictureUrl = null,
-    Object? isBuy = null,
+    Object? isNew = freezed,
+    Object? isBuy = freezed,
     Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -85,10 +91,14 @@ class _$HomeStorePhoneCopyWithImpl<$Res, $Val extends HomeStorePhone>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      isBuy: null == isBuy
+      isNew: freezed == isNew
+          ? _value.isNew
+          : isNew // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isBuy: freezed == isBuy
           ? _value.isBuy
           : isBuy // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -106,11 +116,12 @@ abstract class _$$_HomeStorePhoneCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
       String subtitle,
-      String pictureUrl,
-      bool isBuy,
+      @JsonKey(name: 'picture') String pictureUrl,
+      @JsonKey(name: 'is_new') bool? isNew,
+      @JsonKey(name: 'is_buy') bool? isBuy,
       bool isFavorite});
 }
 
@@ -129,14 +140,15 @@ class __$$_HomeStorePhoneCopyWithImpl<$Res>
     Object? title = null,
     Object? subtitle = null,
     Object? pictureUrl = null,
-    Object? isBuy = null,
+    Object? isNew = freezed,
+    Object? isBuy = freezed,
     Object? isFavorite = null,
   }) {
     return _then(_$_HomeStorePhone(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -149,10 +161,14 @@ class __$$_HomeStorePhoneCopyWithImpl<$Res>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      isBuy: null == isBuy
+      isNew: freezed == isNew
+          ? _value.isNew
+          : isNew // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isBuy: freezed == isBuy
           ? _value.isBuy
           : isBuy // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -170,31 +186,36 @@ class _$_HomeStorePhone
       {required this.id,
       required this.title,
       required this.subtitle,
-      required this.pictureUrl,
-      this.isBuy = false,
+      @JsonKey(name: 'picture') required this.pictureUrl,
+      @JsonKey(name: 'is_new') this.isNew,
+      @JsonKey(name: 'is_buy') this.isBuy,
       this.isFavorite = false});
 
   factory _$_HomeStorePhone.fromJson(Map<String, dynamic> json) =>
       _$$_HomeStorePhoneFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String title;
   @override
   final String subtitle;
   @override
+  @JsonKey(name: 'picture')
   final String pictureUrl;
   @override
-  @JsonKey()
-  final bool isBuy;
+  @JsonKey(name: 'is_new')
+  final bool? isNew;
+  @override
+  @JsonKey(name: 'is_buy')
+  final bool? isBuy;
   @override
   @JsonKey()
   final bool isFavorite;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeStorePhone(id: $id, title: $title, subtitle: $subtitle, pictureUrl: $pictureUrl, isBuy: $isBuy, isFavorite: $isFavorite)';
+    return 'HomeStorePhone(id: $id, title: $title, subtitle: $subtitle, pictureUrl: $pictureUrl, isNew: $isNew, isBuy: $isBuy, isFavorite: $isFavorite)';
   }
 
   @override
@@ -206,6 +227,7 @@ class _$_HomeStorePhone
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('subtitle', subtitle))
       ..add(DiagnosticsProperty('pictureUrl', pictureUrl))
+      ..add(DiagnosticsProperty('isNew', isNew))
       ..add(DiagnosticsProperty('isBuy', isBuy))
       ..add(DiagnosticsProperty('isFavorite', isFavorite));
   }
@@ -221,6 +243,7 @@ class _$_HomeStorePhone
                 other.subtitle == subtitle) &&
             (identical(other.pictureUrl, pictureUrl) ||
                 other.pictureUrl == pictureUrl) &&
+            (identical(other.isNew, isNew) || other.isNew == isNew) &&
             (identical(other.isBuy, isBuy) || other.isBuy == isBuy) &&
             (identical(other.isFavorite, isFavorite) ||
                 other.isFavorite == isFavorite));
@@ -229,7 +252,7 @@ class _$_HomeStorePhone
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, subtitle, pictureUrl, isBuy, isFavorite);
+      runtimeType, id, title, subtitle, pictureUrl, isNew, isBuy, isFavorite);
 
   @JsonKey(ignore: true)
   @override
@@ -247,26 +270,32 @@ class _$_HomeStorePhone
 
 abstract class _HomeStorePhone implements HomeStorePhone {
   const factory _HomeStorePhone(
-      {required final String id,
+      {required final int id,
       required final String title,
       required final String subtitle,
-      required final String pictureUrl,
-      final bool isBuy,
+      @JsonKey(name: 'picture') required final String pictureUrl,
+      @JsonKey(name: 'is_new') final bool? isNew,
+      @JsonKey(name: 'is_buy') final bool? isBuy,
       final bool isFavorite}) = _$_HomeStorePhone;
 
   factory _HomeStorePhone.fromJson(Map<String, dynamic> json) =
       _$_HomeStorePhone.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get title;
   @override
   String get subtitle;
   @override
+  @JsonKey(name: 'picture')
   String get pictureUrl;
   @override
-  bool get isBuy;
+  @JsonKey(name: 'is_new')
+  bool? get isNew;
+  @override
+  @JsonKey(name: 'is_buy')
+  bool? get isBuy;
   @override
   bool get isFavorite;
   @override

@@ -8,11 +8,12 @@ part of 'home_store_phone.dart';
 
 _$_HomeStorePhone _$$_HomeStorePhoneFromJson(Map<String, dynamic> json) =>
     _$_HomeStorePhone(
-      id: json['id'] as String,
+      id: json['id'] as int,
       title: json['title'] as String,
       subtitle: json['subtitle'] as String,
-      pictureUrl: json['pictureUrl'] as String,
-      isBuy: json['isBuy'] as bool? ?? false,
+      pictureUrl: json['picture'] as String,
+      isNew: json['is_new'] as bool?,
+      isBuy: json['is_buy'] as bool?,
       isFavorite: json['isFavorite'] as bool? ?? false,
     );
 
@@ -21,7 +22,8 @@ Map<String, dynamic> _$$_HomeStorePhoneToJson(_$_HomeStorePhone instance) =>
       'id': instance.id,
       'title': instance.title,
       'subtitle': instance.subtitle,
-      'pictureUrl': instance.pictureUrl,
-      'isBuy': instance.isBuy,
+      'picture': instance.pictureUrl,
+      'is_new': instance.isNew,
+      'is_buy': instance.isBuy,
       'isFavorite': instance.isFavorite,
     };

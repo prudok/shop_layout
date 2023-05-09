@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/best_seller_phones/best_seller_phone/best_seller_phone.dart';
+import '../../domain/entities/best_seller_phone/best_seller_phone.dart';
 
 class HotSalePreview extends StatelessWidget {
   final BestSellerPhone phone;
@@ -11,7 +11,14 @@ class HotSalePreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.network(phone.pictureUrl),
+        SizedBox(
+          width: 300,
+          height: 300,
+          child: Image.network(
+            phone.pictureUrl,
+            fit: BoxFit.cover,
+          ),
+        ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.favorite_outline_rounded),

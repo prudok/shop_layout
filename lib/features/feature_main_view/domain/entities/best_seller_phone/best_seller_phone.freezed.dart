@@ -20,12 +20,16 @@ BestSellerPhone _$BestSellerPhoneFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BestSellerPhone {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get subtitle => throw _privateConstructorUsedError;
+  @JsonKey(name: 'picture')
   String get pictureUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'price_without_discount')
   double get priceWithoutDiscount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'discount_price')
   double get discountPrice => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_favorites')
+  bool get isFavorites => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +44,12 @@ abstract class $BestSellerPhoneCopyWith<$Res> {
       _$BestSellerPhoneCopyWithImpl<$Res, BestSellerPhone>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
-      String subtitle,
-      String pictureUrl,
-      double priceWithoutDiscount,
-      double discountPrice});
+      @JsonKey(name: 'picture') String pictureUrl,
+      @JsonKey(name: 'price_without_discount') double priceWithoutDiscount,
+      @JsonKey(name: 'discount_price') double discountPrice,
+      @JsonKey(name: 'is_favorites') bool isFavorites});
 }
 
 /// @nodoc
@@ -63,23 +67,19 @@ class _$BestSellerPhoneCopyWithImpl<$Res, $Val extends BestSellerPhone>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? subtitle = null,
     Object? pictureUrl = null,
     Object? priceWithoutDiscount = null,
     Object? discountPrice = null,
+    Object? isFavorites = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      subtitle: null == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
       pictureUrl: null == pictureUrl
           ? _value.pictureUrl
@@ -93,6 +93,10 @@ class _$BestSellerPhoneCopyWithImpl<$Res, $Val extends BestSellerPhone>
           ? _value.discountPrice
           : discountPrice // ignore: cast_nullable_to_non_nullable
               as double,
+      isFavorites: null == isFavorites
+          ? _value.isFavorites
+          : isFavorites // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -106,12 +110,12 @@ abstract class _$$_BestSellerPhoneCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
-      String subtitle,
-      String pictureUrl,
-      double priceWithoutDiscount,
-      double discountPrice});
+      @JsonKey(name: 'picture') String pictureUrl,
+      @JsonKey(name: 'price_without_discount') double priceWithoutDiscount,
+      @JsonKey(name: 'discount_price') double discountPrice,
+      @JsonKey(name: 'is_favorites') bool isFavorites});
 }
 
 /// @nodoc
@@ -127,23 +131,19 @@ class __$$_BestSellerPhoneCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? subtitle = null,
     Object? pictureUrl = null,
     Object? priceWithoutDiscount = null,
     Object? discountPrice = null,
+    Object? isFavorites = null,
   }) {
     return _then(_$_BestSellerPhone(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      subtitle: null == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
       pictureUrl: null == pictureUrl
           ? _value.pictureUrl
@@ -157,6 +157,10 @@ class __$$_BestSellerPhoneCopyWithImpl<$Res>
           ? _value.discountPrice
           : discountPrice // ignore: cast_nullable_to_non_nullable
               as double,
+      isFavorites: null == isFavorites
+          ? _value.isFavorites
+          : isFavorites // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -169,30 +173,38 @@ class _$_BestSellerPhone
   const _$_BestSellerPhone(
       {required this.id,
       required this.title,
-      required this.subtitle,
-      required this.pictureUrl,
-      required this.priceWithoutDiscount,
-      required this.discountPrice});
+      @JsonKey(name: 'picture')
+          required this.pictureUrl,
+      @JsonKey(name: 'price_without_discount')
+          required this.priceWithoutDiscount,
+      @JsonKey(name: 'discount_price')
+          required this.discountPrice,
+      @JsonKey(name: 'is_favorites')
+          required this.isFavorites});
 
   factory _$_BestSellerPhone.fromJson(Map<String, dynamic> json) =>
       _$$_BestSellerPhoneFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String title;
   @override
-  final String subtitle;
-  @override
+  @JsonKey(name: 'picture')
   final String pictureUrl;
   @override
+  @JsonKey(name: 'price_without_discount')
   final double priceWithoutDiscount;
   @override
+  @JsonKey(name: 'discount_price')
   final double discountPrice;
+  @override
+  @JsonKey(name: 'is_favorites')
+  final bool isFavorites;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BestSellerPhone(id: $id, title: $title, subtitle: $subtitle, pictureUrl: $pictureUrl, priceWithoutDiscount: $priceWithoutDiscount, discountPrice: $discountPrice)';
+    return 'BestSellerPhone(id: $id, title: $title, pictureUrl: $pictureUrl, priceWithoutDiscount: $priceWithoutDiscount, discountPrice: $discountPrice, isFavorites: $isFavorites)';
   }
 
   @override
@@ -202,10 +214,10 @@ class _$_BestSellerPhone
       ..add(DiagnosticsProperty('type', 'BestSellerPhone'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('subtitle', subtitle))
       ..add(DiagnosticsProperty('pictureUrl', pictureUrl))
       ..add(DiagnosticsProperty('priceWithoutDiscount', priceWithoutDiscount))
-      ..add(DiagnosticsProperty('discountPrice', discountPrice));
+      ..add(DiagnosticsProperty('discountPrice', discountPrice))
+      ..add(DiagnosticsProperty('isFavorites', isFavorites));
   }
 
   @override
@@ -215,20 +227,20 @@ class _$_BestSellerPhone
             other is _$_BestSellerPhone &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
             (identical(other.pictureUrl, pictureUrl) ||
                 other.pictureUrl == pictureUrl) &&
             (identical(other.priceWithoutDiscount, priceWithoutDiscount) ||
                 other.priceWithoutDiscount == priceWithoutDiscount) &&
             (identical(other.discountPrice, discountPrice) ||
-                other.discountPrice == discountPrice));
+                other.discountPrice == discountPrice) &&
+            (identical(other.isFavorites, isFavorites) ||
+                other.isFavorites == isFavorites));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, subtitle, pictureUrl,
-      priceWithoutDiscount, discountPrice);
+  int get hashCode => Object.hash(runtimeType, id, title, pictureUrl,
+      priceWithoutDiscount, discountPrice, isFavorites);
 
   @JsonKey(ignore: true)
   @override
@@ -246,28 +258,36 @@ class _$_BestSellerPhone
 
 abstract class _BestSellerPhone implements BestSellerPhone {
   const factory _BestSellerPhone(
-      {required final String id,
+      {required final int id,
       required final String title,
-      required final String subtitle,
-      required final String pictureUrl,
-      required final double priceWithoutDiscount,
-      required final double discountPrice}) = _$_BestSellerPhone;
+      @JsonKey(name: 'picture')
+          required final String pictureUrl,
+      @JsonKey(name: 'price_without_discount')
+          required final double priceWithoutDiscount,
+      @JsonKey(name: 'discount_price')
+          required final double discountPrice,
+      @JsonKey(name: 'is_favorites')
+          required final bool isFavorites}) = _$_BestSellerPhone;
 
   factory _BestSellerPhone.fromJson(Map<String, dynamic> json) =
       _$_BestSellerPhone.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get title;
   @override
-  String get subtitle;
-  @override
+  @JsonKey(name: 'picture')
   String get pictureUrl;
   @override
+  @JsonKey(name: 'price_without_discount')
   double get priceWithoutDiscount;
   @override
+  @JsonKey(name: 'discount_price')
   double get discountPrice;
+  @override
+  @JsonKey(name: 'is_favorites')
+  bool get isFavorites;
   @override
   @JsonKey(ignore: true)
   _$$_BestSellerPhoneCopyWith<_$_BestSellerPhone> get copyWith =>

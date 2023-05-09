@@ -18,39 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PhoneSellerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() start,
     required TResult Function() load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? start,
     TResult? Function()? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? start,
     TResult Function()? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(Load value) load,
+    required TResult Function(PhoneSellerStartEvent value) start,
+    required TResult Function(PhoneSellerLoadEvent value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(Load value)? load,
+    TResult? Function(PhoneSellerStartEvent value)? start,
+    TResult? Function(PhoneSellerLoadEvent value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(Load value)? load,
+    TResult Function(PhoneSellerStartEvent value)? start,
+    TResult Function(PhoneSellerLoadEvent value)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,33 +75,35 @@ class _$PhoneSellerEventCopyWithImpl<$Res, $Val extends PhoneSellerEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedCopyWith<$Res> {
-  factory _$$StartedCopyWith(_$Started value, $Res Function(_$Started) then) =
-      __$$StartedCopyWithImpl<$Res>;
+abstract class _$$PhoneSellerStartEventCopyWith<$Res> {
+  factory _$$PhoneSellerStartEventCopyWith(_$PhoneSellerStartEvent value,
+          $Res Function(_$PhoneSellerStartEvent) then) =
+      __$$PhoneSellerStartEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedCopyWithImpl<$Res>
-    extends _$PhoneSellerEventCopyWithImpl<$Res, _$Started>
-    implements _$$StartedCopyWith<$Res> {
-  __$$StartedCopyWithImpl(_$Started _value, $Res Function(_$Started) _then)
+class __$$PhoneSellerStartEventCopyWithImpl<$Res>
+    extends _$PhoneSellerEventCopyWithImpl<$Res, _$PhoneSellerStartEvent>
+    implements _$$PhoneSellerStartEventCopyWith<$Res> {
+  __$$PhoneSellerStartEventCopyWithImpl(_$PhoneSellerStartEvent _value,
+      $Res Function(_$PhoneSellerStartEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Started implements Started {
-  const _$Started();
+class _$PhoneSellerStartEvent implements PhoneSellerStartEvent {
+  const _$PhoneSellerStartEvent();
 
   @override
   String toString() {
-    return 'PhoneSellerEvent.started()';
+    return 'PhoneSellerEvent.start()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Started);
+        (other.runtimeType == runtimeType && other is _$PhoneSellerStartEvent);
   }
 
   @override
@@ -110,30 +112,30 @@ class _$Started implements Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() start,
     required TResult Function() load,
   }) {
-    return started();
+    return start();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? start,
     TResult? Function()? load,
   }) {
-    return started?.call();
+    return start?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? start,
     TResult Function()? load,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (start != null) {
+      return start();
     }
     return orElse();
   }
@@ -141,57 +143,59 @@ class _$Started implements Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(Load value) load,
+    required TResult Function(PhoneSellerStartEvent value) start,
+    required TResult Function(PhoneSellerLoadEvent value) load,
   }) {
-    return started(this);
+    return start(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(Load value)? load,
+    TResult? Function(PhoneSellerStartEvent value)? start,
+    TResult? Function(PhoneSellerLoadEvent value)? load,
   }) {
-    return started?.call(this);
+    return start?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(Load value)? load,
+    TResult Function(PhoneSellerStartEvent value)? start,
+    TResult Function(PhoneSellerLoadEvent value)? load,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (start != null) {
+      return start(this);
     }
     return orElse();
   }
 }
 
-abstract class Started implements PhoneSellerEvent {
-  const factory Started() = _$Started;
+abstract class PhoneSellerStartEvent implements PhoneSellerEvent {
+  const factory PhoneSellerStartEvent() = _$PhoneSellerStartEvent;
 }
 
 /// @nodoc
-abstract class _$$LoadCopyWith<$Res> {
-  factory _$$LoadCopyWith(_$Load value, $Res Function(_$Load) then) =
-      __$$LoadCopyWithImpl<$Res>;
+abstract class _$$PhoneSellerLoadEventCopyWith<$Res> {
+  factory _$$PhoneSellerLoadEventCopyWith(_$PhoneSellerLoadEvent value,
+          $Res Function(_$PhoneSellerLoadEvent) then) =
+      __$$PhoneSellerLoadEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadCopyWithImpl<$Res>
-    extends _$PhoneSellerEventCopyWithImpl<$Res, _$Load>
-    implements _$$LoadCopyWith<$Res> {
-  __$$LoadCopyWithImpl(_$Load _value, $Res Function(_$Load) _then)
+class __$$PhoneSellerLoadEventCopyWithImpl<$Res>
+    extends _$PhoneSellerEventCopyWithImpl<$Res, _$PhoneSellerLoadEvent>
+    implements _$$PhoneSellerLoadEventCopyWith<$Res> {
+  __$$PhoneSellerLoadEventCopyWithImpl(_$PhoneSellerLoadEvent _value,
+      $Res Function(_$PhoneSellerLoadEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Load implements Load {
-  const _$Load();
+class _$PhoneSellerLoadEvent implements PhoneSellerLoadEvent {
+  const _$PhoneSellerLoadEvent();
 
   @override
   String toString() {
@@ -201,7 +205,7 @@ class _$Load implements Load {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Load);
+        (other.runtimeType == runtimeType && other is _$PhoneSellerLoadEvent);
   }
 
   @override
@@ -210,7 +214,7 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() start,
     required TResult Function() load,
   }) {
     return load();
@@ -219,7 +223,7 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? start,
     TResult? Function()? load,
   }) {
     return load?.call();
@@ -228,7 +232,7 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? start,
     TResult Function()? load,
     required TResult orElse(),
   }) {
@@ -241,8 +245,8 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(Load value) load,
+    required TResult Function(PhoneSellerStartEvent value) start,
+    required TResult Function(PhoneSellerLoadEvent value) load,
   }) {
     return load(this);
   }
@@ -250,8 +254,8 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(Load value)? load,
+    TResult? Function(PhoneSellerStartEvent value)? start,
+    TResult? Function(PhoneSellerLoadEvent value)? load,
   }) {
     return load?.call(this);
   }
@@ -259,8 +263,8 @@ class _$Load implements Load {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(Load value)? load,
+    TResult Function(PhoneSellerStartEvent value)? start,
+    TResult Function(PhoneSellerLoadEvent value)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -270,8 +274,8 @@ class _$Load implements Load {
   }
 }
 
-abstract class Load implements PhoneSellerEvent {
-  const factory Load() = _$Load;
+abstract class PhoneSellerLoadEvent implements PhoneSellerEvent {
+  const factory PhoneSellerLoadEvent() = _$PhoneSellerLoadEvent;
 }
 
 /// @nodoc
@@ -280,49 +284,43 @@ mixin _$PhoneSellerState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)
-        loaded,
+    required TResult Function(Phones phones) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult? Function(Phones phones)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult Function(Phones phones)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_PhoneSellerInitialState value) initial,
+    required TResult Function(_PhoneSellerLoadingState value) loading,
+    required TResult Function(_PhoneSellerLoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_PhoneSellerInitialState value)? initial,
+    TResult? Function(_PhoneSellerLoadingState value)? loading,
+    TResult? Function(_PhoneSellerLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_PhoneSellerInitialState value)? initial,
+    TResult Function(_PhoneSellerLoadingState value)? loading,
+    TResult Function(_PhoneSellerLoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -347,24 +345,25 @@ class _$PhoneSellerStateCopyWithImpl<$Res, $Val extends PhoneSellerState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$_PhoneSellerInitialStateCopyWith<$Res> {
+  factory _$$_PhoneSellerInitialStateCopyWith(_$_PhoneSellerInitialState value,
+          $Res Function(_$_PhoneSellerInitialState) then) =
+      __$$_PhoneSellerInitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$_PhoneSellerInitialStateCopyWithImpl<$Res>
+    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_PhoneSellerInitialState>
+    implements _$$_PhoneSellerInitialStateCopyWith<$Res> {
+  __$$_PhoneSellerInitialStateCopyWithImpl(_$_PhoneSellerInitialState _value,
+      $Res Function(_$_PhoneSellerInitialState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_PhoneSellerInitialState implements _PhoneSellerInitialState {
+  const _$_PhoneSellerInitialState();
 
   @override
   String toString() {
@@ -374,7 +373,8 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_PhoneSellerInitialState);
   }
 
   @override
@@ -385,9 +385,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)
-        loaded,
+    required TResult Function(Phones phones) loaded,
   }) {
     return initial();
   }
@@ -397,9 +395,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult? Function(Phones phones)? loaded,
   }) {
     return initial?.call();
   }
@@ -409,9 +405,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult Function(Phones phones)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -423,9 +417,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_PhoneSellerInitialState value) initial,
+    required TResult Function(_PhoneSellerLoadingState value) loading,
+    required TResult Function(_PhoneSellerLoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -433,9 +427,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_PhoneSellerInitialState value)? initial,
+    TResult? Function(_PhoneSellerLoadingState value)? loading,
+    TResult? Function(_PhoneSellerLoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -443,9 +437,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_PhoneSellerInitialState value)? initial,
+    TResult Function(_PhoneSellerLoadingState value)? loading,
+    TResult Function(_PhoneSellerLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -455,29 +449,30 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements PhoneSellerState {
-  const factory _Initial() = _$_Initial;
+abstract class _PhoneSellerInitialState implements PhoneSellerState {
+  const factory _PhoneSellerInitialState() = _$_PhoneSellerInitialState;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$_PhoneSellerLoadingStateCopyWith<$Res> {
+  factory _$$_PhoneSellerLoadingStateCopyWith(_$_PhoneSellerLoadingState value,
+          $Res Function(_$_PhoneSellerLoadingState) then) =
+      __$$_PhoneSellerLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$_PhoneSellerLoadingStateCopyWithImpl<$Res>
+    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_PhoneSellerLoadingState>
+    implements _$$_PhoneSellerLoadingStateCopyWith<$Res> {
+  __$$_PhoneSellerLoadingStateCopyWithImpl(_$_PhoneSellerLoadingState _value,
+      $Res Function(_$_PhoneSellerLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_PhoneSellerLoadingState implements _PhoneSellerLoadingState {
+  const _$_PhoneSellerLoadingState();
 
   @override
   String toString() {
@@ -487,7 +482,8 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType &&
+            other is _$_PhoneSellerLoadingState);
   }
 
   @override
@@ -498,9 +494,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)
-        loaded,
+    required TResult Function(Phones phones) loaded,
   }) {
     return loading();
   }
@@ -510,9 +504,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult? Function(Phones phones)? loaded,
   }) {
     return loading?.call();
   }
@@ -522,9 +514,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult Function(Phones phones)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -536,9 +526,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_PhoneSellerInitialState value) initial,
+    required TResult Function(_PhoneSellerLoadingState value) loading,
+    required TResult Function(_PhoneSellerLoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -546,9 +536,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_PhoneSellerInitialState value)? initial,
+    TResult? Function(_PhoneSellerLoadingState value)? loading,
+    TResult? Function(_PhoneSellerLoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -556,9 +546,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_PhoneSellerInitialState value)? initial,
+    TResult Function(_PhoneSellerLoadingState value)? loading,
+    TResult Function(_PhoneSellerLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -568,120 +558,90 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements PhoneSellerState {
-  const factory _Loading() = _$_Loading;
+abstract class _PhoneSellerLoadingState implements PhoneSellerState {
+  const factory _PhoneSellerLoadingState() = _$_PhoneSellerLoadingState;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$_PhoneSellerLoadedStateCopyWith<$Res> {
+  factory _$$_PhoneSellerLoadedStateCopyWith(_$_PhoneSellerLoadedState value,
+          $Res Function(_$_PhoneSellerLoadedState) then) =
+      __$$_PhoneSellerLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {HomeStorePhoneList? homeStorePhones,
-      BestSellerPhoneList? bestSellerPhones});
+  $Res call({Phones phones});
 
-  $HomeStorePhoneListCopyWith<$Res>? get homeStorePhones;
-  $BestSellerPhoneListCopyWith<$Res>? get bestSellerPhones;
+  $PhonesCopyWith<$Res> get phones;
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$_PhoneSellerLoadedStateCopyWithImpl<$Res>
+    extends _$PhoneSellerStateCopyWithImpl<$Res, _$_PhoneSellerLoadedState>
+    implements _$$_PhoneSellerLoadedStateCopyWith<$Res> {
+  __$$_PhoneSellerLoadedStateCopyWithImpl(_$_PhoneSellerLoadedState _value,
+      $Res Function(_$_PhoneSellerLoadedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? homeStorePhones = freezed,
-    Object? bestSellerPhones = freezed,
+    Object? phones = null,
   }) {
-    return _then(_$_Loaded(
-      freezed == homeStorePhones
-          ? _value.homeStorePhones
-          : homeStorePhones // ignore: cast_nullable_to_non_nullable
-              as HomeStorePhoneList?,
-      freezed == bestSellerPhones
-          ? _value.bestSellerPhones
-          : bestSellerPhones // ignore: cast_nullable_to_non_nullable
-              as BestSellerPhoneList?,
+    return _then(_$_PhoneSellerLoadedState(
+      phones: null == phones
+          ? _value.phones
+          : phones // ignore: cast_nullable_to_non_nullable
+              as Phones,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $HomeStorePhoneListCopyWith<$Res>? get homeStorePhones {
-    if (_value.homeStorePhones == null) {
-      return null;
-    }
-
-    return $HomeStorePhoneListCopyWith<$Res>(_value.homeStorePhones!, (value) {
-      return _then(_value.copyWith(homeStorePhones: value));
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BestSellerPhoneListCopyWith<$Res>? get bestSellerPhones {
-    if (_value.bestSellerPhones == null) {
-      return null;
-    }
-
-    return $BestSellerPhoneListCopyWith<$Res>(_value.bestSellerPhones!,
-        (value) {
-      return _then(_value.copyWith(bestSellerPhones: value));
+  $PhonesCopyWith<$Res> get phones {
+    return $PhonesCopyWith<$Res>(_value.phones, (value) {
+      return _then(_value.copyWith(phones: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded([this.homeStorePhones, this.bestSellerPhones]);
+class _$_PhoneSellerLoadedState implements _PhoneSellerLoadedState {
+  const _$_PhoneSellerLoadedState({required this.phones});
 
   @override
-  final HomeStorePhoneList? homeStorePhones;
-  @override
-  final BestSellerPhoneList? bestSellerPhones;
+  final Phones phones;
 
   @override
   String toString() {
-    return 'PhoneSellerState.loaded(homeStorePhones: $homeStorePhones, bestSellerPhones: $bestSellerPhones)';
+    return 'PhoneSellerState.loaded(phones: $phones)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
-            (identical(other.homeStorePhones, homeStorePhones) ||
-                other.homeStorePhones == homeStorePhones) &&
-            (identical(other.bestSellerPhones, bestSellerPhones) ||
-                other.bestSellerPhones == bestSellerPhones));
+            other is _$_PhoneSellerLoadedState &&
+            (identical(other.phones, phones) || other.phones == phones));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, homeStorePhones, bestSellerPhones);
+  int get hashCode => Object.hash(runtimeType, phones);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$_PhoneSellerLoadedStateCopyWith<_$_PhoneSellerLoadedState> get copyWith =>
+      __$$_PhoneSellerLoadedStateCopyWithImpl<_$_PhoneSellerLoadedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)
-        loaded,
+    required TResult Function(Phones phones) loaded,
   }) {
-    return loaded(homeStorePhones, bestSellerPhones);
+    return loaded(phones);
   }
 
   @override
@@ -689,11 +649,9 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult? Function(Phones phones)? loaded,
   }) {
-    return loaded?.call(homeStorePhones, bestSellerPhones);
+    return loaded?.call(phones);
   }
 
   @override
@@ -701,13 +659,11 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeStorePhoneList? homeStorePhones,
-            BestSellerPhoneList? bestSellerPhones)?
-        loaded,
+    TResult Function(Phones phones)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(homeStorePhones, bestSellerPhones);
+      return loaded(phones);
     }
     return orElse();
   }
@@ -715,9 +671,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_PhoneSellerInitialState value) initial,
+    required TResult Function(_PhoneSellerLoadingState value) loading,
+    required TResult Function(_PhoneSellerLoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -725,9 +681,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_PhoneSellerInitialState value)? initial,
+    TResult? Function(_PhoneSellerLoadingState value)? loading,
+    TResult? Function(_PhoneSellerLoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -735,9 +691,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_PhoneSellerInitialState value)? initial,
+    TResult Function(_PhoneSellerLoadingState value)? loading,
+    TResult Function(_PhoneSellerLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -747,14 +703,12 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements PhoneSellerState {
-  const factory _Loaded(
-      [final HomeStorePhoneList? homeStorePhones,
-      final BestSellerPhoneList? bestSellerPhones]) = _$_Loaded;
+abstract class _PhoneSellerLoadedState implements PhoneSellerState {
+  const factory _PhoneSellerLoadedState({required final Phones phones}) =
+      _$_PhoneSellerLoadedState;
 
-  HomeStorePhoneList? get homeStorePhones;
-  BestSellerPhoneList? get bestSellerPhones;
+  Phones get phones;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$_PhoneSellerLoadedStateCopyWith<_$_PhoneSellerLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
 }
