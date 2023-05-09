@@ -11,7 +11,7 @@ class HomeStorePhone with _$HomeStorePhone {
     required String title,
     required String subtitle,
     @JsonKey(name: 'picture') required String pictureUrl,
-    @JsonKey(name: 'is_new') bool? isNew,
+    @JsonKey(name: 'is_new') @Default(false) bool isNew,
     @JsonKey(name: 'is_buy') bool? isBuy,
     @Default(false) bool isFavorite,
   }) = _HomeStorePhone;

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,6 +15,12 @@ class PhoneSellerBloc extends Bloc<PhoneSellerEvent, PhoneSellerState> {
   PhoneSellerBloc() : super(const PhoneSellerState.initial()) {
     final phoneAPI = PhoneAPIImpl();
     final phoneRepository = PhoneRepositoryImpl(phoneAPI);
+    //Modify in future
+    emit(const PhoneSellerState.loading());
+    phoneRepository.getPhones().then((phoneList) {
+      emit(PhoneSellerState.loaded(phones: phoneList));
+    });
+    //
     on<PhoneSellerLoadEvent>((event, emit) async {
       emit(const PhoneSellerState.loading());
       await phoneRepository.getPhones().then((phoneList) {

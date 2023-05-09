@@ -12,7 +12,7 @@ _$_HomeStorePhone _$$_HomeStorePhoneFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       subtitle: json['subtitle'] as String,
       pictureUrl: json['picture'] as String,
-      isNew: json['is_new'] as bool?,
+      isNew: json['is_new'] as bool? ?? false,
       isBuy: json['is_buy'] as bool?,
       isFavorite: json['isFavorite'] as bool? ?? false,
     );

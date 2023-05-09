@@ -7,4 +7,5 @@ class AppColors {
   static const Color grey = Color.fromRGBO(213, 213, 213, 1);
   static const Color lightGrey = Color.fromRGBO(246, 246, 246, 1);
   static Color shadow = Colors.grey.withOpacity(0.1);
+  static Color black = Colors.black;
 }

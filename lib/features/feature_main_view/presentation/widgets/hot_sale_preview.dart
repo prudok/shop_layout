@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
+import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
 
-import '../../domain/entities/best_seller_phone/best_seller_phone.dart';
+import '../../domain/entities/home_store_phone/home_store_phone.dart';
 
 class HotSalePreview extends StatelessWidget {
-  final BestSellerPhone phone;
+  final HomeStorePhone phone;
 
   const HotSalePreview({super.key, required this.phone});
 
@@ -12,16 +15,71 @@ class HotSalePreview extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          width: 300,
-          height: 300,
-          child: Image.network(
-            phone.pictureUrl,
-            fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            child: Image.network(
+              phone.pictureUrl,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.favorite_outline_rounded),
+        Padding(
+          padding: EdgeInsets.only(left: 15.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10.h),
+              phone.isNew
+                  ? CircleAvatar(
+                      radius: 13.w,
+                      backgroundColor: AppColors.orange,
+                      child: Text(
+                        'New',
+                        style: AppTextStyles.bodyMedium.copyWith(
+                          color: AppColors.white,
+                        ),
+                      ),
+                    )
+                  : SizedBox(height: 34.h),
+              SizedBox(height: 5.h),
+              Text(
+                phone.title,
+                style: AppTextStyles.titleLarge.copyWith(
+                  color: AppColors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 1.h),
+              Text(
+                phone.subtitle,
+                style: AppTextStyles.titleSmall.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+              SizedBox(height: 18.h),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 27.w, vertical: 5.h),
+                  backgroundColor: AppColors.white,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
+                ),
+                child: Text(
+                  'Buy Now!',
+                  style: AppTextStyles.titleSmall.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

@@ -26,7 +26,7 @@ mixin _$HomeStorePhone {
   @JsonKey(name: 'picture')
   String get pictureUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_new')
-  bool? get isNew => throw _privateConstructorUsedError;
+  bool get isNew => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_buy')
   bool? get isBuy => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $HomeStorePhoneCopyWith<$Res> {
       String title,
       String subtitle,
       @JsonKey(name: 'picture') String pictureUrl,
-      @JsonKey(name: 'is_new') bool? isNew,
+      @JsonKey(name: 'is_new') bool isNew,
       @JsonKey(name: 'is_buy') bool? isBuy,
       bool isFavorite});
 }
@@ -70,7 +70,7 @@ class _$HomeStorePhoneCopyWithImpl<$Res, $Val extends HomeStorePhone>
     Object? title = null,
     Object? subtitle = null,
     Object? pictureUrl = null,
-    Object? isNew = freezed,
+    Object? isNew = null,
     Object? isBuy = freezed,
     Object? isFavorite = null,
   }) {
@@ -91,10 +91,10 @@ class _$HomeStorePhoneCopyWithImpl<$Res, $Val extends HomeStorePhone>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      isNew: freezed == isNew
+      isNew: null == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       isBuy: freezed == isBuy
           ? _value.isBuy
           : isBuy // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ abstract class _$$_HomeStorePhoneCopyWith<$Res>
       String title,
       String subtitle,
       @JsonKey(name: 'picture') String pictureUrl,
-      @JsonKey(name: 'is_new') bool? isNew,
+      @JsonKey(name: 'is_new') bool isNew,
       @JsonKey(name: 'is_buy') bool? isBuy,
       bool isFavorite});
 }
@@ -140,7 +140,7 @@ class __$$_HomeStorePhoneCopyWithImpl<$Res>
     Object? title = null,
     Object? subtitle = null,
     Object? pictureUrl = null,
-    Object? isNew = freezed,
+    Object? isNew = null,
     Object? isBuy = freezed,
     Object? isFavorite = null,
   }) {
@@ -161,10 +161,10 @@ class __$$_HomeStorePhoneCopyWithImpl<$Res>
           ? _value.pictureUrl
           : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      isNew: freezed == isNew
+      isNew: null == isNew
           ? _value.isNew
           : isNew // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       isBuy: freezed == isBuy
           ? _value.isBuy
           : isBuy // ignore: cast_nullable_to_non_nullable
@@ -187,7 +187,7 @@ class _$_HomeStorePhone
       required this.title,
       required this.subtitle,
       @JsonKey(name: 'picture') required this.pictureUrl,
-      @JsonKey(name: 'is_new') this.isNew,
+      @JsonKey(name: 'is_new') this.isNew = false,
       @JsonKey(name: 'is_buy') this.isBuy,
       this.isFavorite = false});
 
@@ -205,7 +205,7 @@ class _$_HomeStorePhone
   final String pictureUrl;
   @override
   @JsonKey(name: 'is_new')
-  final bool? isNew;
+  final bool isNew;
   @override
   @JsonKey(name: 'is_buy')
   final bool? isBuy;
@@ -274,7 +274,7 @@ abstract class _HomeStorePhone implements HomeStorePhone {
       required final String title,
       required final String subtitle,
       @JsonKey(name: 'picture') required final String pictureUrl,
-      @JsonKey(name: 'is_new') final bool? isNew,
+      @JsonKey(name: 'is_new') final bool isNew,
       @JsonKey(name: 'is_buy') final bool? isBuy,
       final bool isFavorite}) = _$_HomeStorePhone;
 
@@ -292,7 +292,7 @@ abstract class _HomeStorePhone implements HomeStorePhone {
   String get pictureUrl;
   @override
   @JsonKey(name: 'is_new')
-  bool? get isNew;
+  bool get isNew;
   @override
   @JsonKey(name: 'is_buy')
   bool? get isBuy;
