@@ -24,7 +24,7 @@ class HotSalesPhoneRow extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: phones.homeStorePhones!.length,
           itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 15.w),
             child: HotSalePreview(
               phone: phones.homeStorePhones![index],
             ),

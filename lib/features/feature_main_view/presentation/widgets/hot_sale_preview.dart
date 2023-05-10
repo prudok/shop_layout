@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
-import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
 
+import '../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../domain/entities/home_store_phone/home_store_phone.dart';
 
 class HotSalePreview extends StatelessWidget {
@@ -14,17 +14,15 @@ class HotSalePreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox(
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            child: Image.network(
-              phone.pictureUrl,
-              fit: BoxFit.cover,
-            ),
+        ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          child: Image.network(
+            phone.pictureUrl,
+            fit: BoxFit.cover,
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 15.w),
+          padding: EdgeInsets.only(left: 25.w, top: 10.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,8 +38,8 @@ class HotSalePreview extends StatelessWidget {
                         ),
                       ),
                     )
-                  : SizedBox(height: 34.h),
-              SizedBox(height: 5.h),
+                  : SizedBox(height: 26.h),
+              SizedBox(height: 9.h),
               Text(
                 phone.title,
                 style: AppTextStyles.titleLarge.copyWith(
@@ -56,7 +54,7 @@ class HotSalePreview extends StatelessWidget {
                   color: AppColors.white,
                 ),
               ),
-              SizedBox(height: 18.h),
+              SizedBox(height: 10.h),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
