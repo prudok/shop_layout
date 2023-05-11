@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
-import '../../../../core/constants/asset_paths/asset_paths.dart';
 
-class CategoryButton extends StatelessWidget {
+class CategoryButton extends StatefulWidget {
   const CategoryButton(
       {super.key, required this.title, required this.imagePath});
 
@@ -13,11 +12,17 @@ class CategoryButton extends StatelessWidget {
   final String imagePath;
 
   @override
+  State<CategoryButton> createState() => _CategoryButtonState();
+}
+
+class _CategoryButtonState extends State<CategoryButton> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.white,
             padding: EdgeInsets.symmetric(
@@ -26,18 +31,17 @@ class CategoryButton extends StatelessWidget {
             ),
           ),
           child: Image.asset(
-            imagePath,
+            widget.imagePath,
             width: 30.w,
             height: 30.h,
-            //TODO: Fix
-            color: Colors.grey,
+            color: AppColors.grey,
           ),
         ),
         SizedBox(
           height: 7.h,
         ),
         Text(
-          title,
+          widget.title,
           style: AppTextStyles.bodyMedium.copyWith(
             color: AppColors.deepPurple,
             fontWeight: FontWeight.bold,
