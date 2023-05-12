@@ -42,6 +42,7 @@ dependencies:
   path_provider: ^2.0.14
   collection: ^1.17.1
   http: ^0.13.6
+  shimmer: ^2.0.0
 
 flutter_native_splash:
   image: assets/images/splash.png

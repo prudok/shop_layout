@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
 import 'package:shop_layout/core/constants/frame_sizes/frame_size.dart';
+import 'package:shop_layout/features/feature_main_view/presentation/widgets/hot_sales_phone_row.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
-import '../../domain/entities/phones/phones.dart';
 import '../bloc/phone_seller_bloc.dart';
 import '../widgets/category_options.dart';
-import '../widgets/category_title.dart';
+import '../widgets/components/phone_preview_block.dart';
 import '../widgets/geo_location_info.dart';
-import '../widgets/hot_sales_preview.dart';
 import '../widgets/searching_line.dart';
+import '../widgets/section_titles/category_title.dart';
+import '../widgets/section_titles/hot_sales_title.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -46,7 +48,12 @@ class HomeView extends StatelessWidget {
             child: const SearchingLine(),
           ),
           SizedBox(height: 10.h),
-          const HotSalesPreview(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: const HotSalesTitle(),
+          ),
+          const HotSalesPhoneRow(),
+          SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: const BestSellerPreview(),
@@ -103,91 +110,59 @@ class BestSellerGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final phoneSellerState = context.watch<PhoneSellerBloc>().state;
-    return phoneSellerState.when(
-      initial: () => const SizedBox(),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      loaded: (Phones phones) => GridView.count(
-        childAspectRatio: 181.w / 248.h,
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        mainAxisSpacing: 12.h,
-        crossAxisSpacing: 11.w,
-        children: List.generate(
-          phones.bestSellerPhones!.length,
-          (index) {
-            return Container(
-              padding: EdgeInsets.only(top: 5.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.w),
-                color: AppColors.white,
+
+    return GridView.count(
+      childAspectRatio: 181.w / 248.h,
+      shrinkWrap: true,
+      crossAxisCount: 2,
+      mainAxisSpacing: 12.h,
+      crossAxisSpacing: 11.w,
+      children: phoneSellerState.when(
+        // refactor this, test feature
+        initial: () {
+          return List.generate(
+            4,
+            (index) => Shimmer.fromColors(
+              baseColor: Colors.grey[300]!,
+              highlightColor: Colors.grey[100]!,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.white,
+                ),
+                height: 115.h,
+                width: 180.w,
               ),
-              child: Stack(
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 180.w,
-                        height: 155.h,
-                        child: Image.network(
-                          phones.bestSellerPhones![0].pictureUrl,
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 21.w),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  '\$${phones.bestSellerPhones![0].discountPrice}',
-                                  style: AppTextStyles.bodyLarge.copyWith(
-                                    color: AppColors.deepPurple,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(width: 7.w),
-                                Text(
-                                  '\$${phones.bestSellerPhones![0].priceWithoutDiscount}',
-                                  style: AppTextStyles.bodyMedium.copyWith(
-                                    decoration: TextDecoration.lineThrough,
-                                  ),
-                                ),
-                                SizedBox(height: 5.h),
-                              ],
-                            ),
-                            Text(
-                              phones.bestSellerPhones![0].title,
-                              style: AppTextStyles.bodyMedium,
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                  Positioned(
-                    top: 0.h,
-                    right: 0.w,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.white,
-                        padding: EdgeInsets.zero,
-                        shape: const CircleBorder(),
-                        shadowColor: AppColors.shadow,
-                      ),
-                      child: const Icon(
-                        Icons.favorite_outline,
-                        color: AppColors.orange,
-                      ),
-                    ),
-                  ),
-                ],
+            ),
+          );
+        },
+        loading: () {
+          return List.generate(
+            4,
+            (index) => Shimmer.fromColors(
+              baseColor: Colors.grey[300]!,
+              highlightColor: Colors.grey[100]!,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.white,
+                ),
+                height: 115.h,
+                width: 180.w,
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
+        loaded: (phones) {
+          return List.generate(
+            phones.bestSellerPhones!.length,
+            (index) {
+              return PhonePreviewBlock(
+                bestSellerPhone: phones.bestSellerPhones![0],
+              );
+            },
+          );
+        },
       ),
     );
   }

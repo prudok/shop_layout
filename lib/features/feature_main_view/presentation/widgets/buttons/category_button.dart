@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors/app_colors.dart';
-import '../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 
 class CategoryButton extends StatefulWidget {
   const CategoryButton(
@@ -34,7 +34,7 @@ class _CategoryButtonState extends State<CategoryButton> {
             widget.imagePath,
             width: 30.w,
             height: 30.h,
-            color: AppColors.grey,
+            color: AppColors.darkGrey,
           ),
         ),
         SizedBox(

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/asset_paths/asset_paths.dart';
-
-import 'category_button.dart';
+import 'buttons/category_button.dart';
 
 class CategoryOptions extends StatelessWidget {
   const CategoryOptions({
