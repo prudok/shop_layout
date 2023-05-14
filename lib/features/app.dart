@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/features/feature_main_view/presentation/bloc/phone_seller_bloc.dart';
 
 import '../config/themes/light_theme/light_theme.dart';
-import 'feature_main_view/domain/entities/phones/phones.dart';
 import 'feature_main_view/presentation/views/home_view.dart';
 
 class ShopLayout extends StatelessWidget {
