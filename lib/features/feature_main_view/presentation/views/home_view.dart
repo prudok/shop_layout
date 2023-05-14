@@ -33,63 +33,21 @@ class HomeView extends StatelessWidget {
             backgroundColor: AppColors.white,
             context: context,
             builder: (BuildContext context) {
-              return Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.deepPurple,
-                          padding: EdgeInsets.symmetric(
-                            vertical: 8.w,
-                            horizontal: 8.w,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.w),
-                          ),
-                        ),
-                        child: const Icon(
-                          Icons.crop_square_sharp,
-                          color: AppColors.white,
-                        ),
-                      ),
-                      Text(
-                        'Filter Options',
-                        style: AppTextStyles.titleMedium.copyWith(
-                          color: AppColors.deepPurple,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.orange,
-                          padding: EdgeInsets.symmetric(
-                            vertical: 7.h,
-                            horizontal: 21.w,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.w),
-                          ),
-                        ),
-                        child: Text(
-                          'Done',
-                          style: AppTextStyles.bodyLarge.copyWith(
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Column(
-                    children: [
-                      FilterItem(label: 'Brand'),
-                      FilterItem(label: 'Price'),
-                      FilterItem(label: 'Size'),
-                    ],
-                  ),
-                ],
+              return Container(
+                margin: EdgeInsets.only(top: 20.h, right: 24.w, left: 24.w),
+                child: Column(
+                  children: [
+                    const FilterOptions(),
+                    SizedBox(height: 28.h),
+                    const Column(
+                      children: [
+                        FilterItem(label: 'Brand'),
+                        FilterItem(label: 'Price'),
+                        FilterItem(label: 'Size'),
+                      ],
+                    ),
+                  ],
+                ),
               );
             },
           );
@@ -134,6 +92,64 @@ class HomeView extends StatelessWidget {
   }
 }
 
+class FilterOptions extends StatelessWidget {
+  const FilterOptions({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.deepPurple,
+            padding: EdgeInsets.symmetric(
+              vertical: 10.w,
+              horizontal: 10.w,
+            ),
+            minimumSize: Size.zero,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.w),
+            ),
+          ),
+          child: const Icon(
+            Icons.close,
+            color: AppColors.white,
+          ),
+        ),
+        Text(
+          'Filter Options',
+          style: AppTextStyles.titleMedium.copyWith(
+            color: AppColors.deepPurple,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.orange,
+            padding: EdgeInsets.symmetric(
+              vertical: 7.h,
+              horizontal: 21.w,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.w),
+            ),
+          ),
+          child: Text(
+            'Done',
+            style: AppTextStyles.bodyLarge.copyWith(
+              color: AppColors.white,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class FilterItem extends StatelessWidget {
   final String label;
 
@@ -142,6 +158,7 @@ class FilterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           label,
@@ -149,24 +166,41 @@ class FilterItem extends StatelessWidget {
             color: AppColors.deepPurple,
           ),
         ),
-        DropdownButton(
+        SizedBox(height: 5.h),
+        DropdownButtonFormField(
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+          ),
           value: 'Samsung',
-          items: const [
+          items: [
             DropdownMenuItem(
               value: 'Samsung',
-              child: Text('Samsung'),
+              child: SizedBox(
+                width: 260.w,
+                height: 37.h,
+                child: const Text('Samsung'),
+              ),
             ),
             DropdownMenuItem(
               value: 'Samsung1',
-              child: Text('Samsung'),
+              child: SizedBox(
+                width: 260.w,
+                height: 37.h,
+                child: const Text('Apple'),
+              ),
             ),
             DropdownMenuItem(
               value: 'Samsung2',
-              child: Text('Samsung'),
+              child: SizedBox(
+                width: 260.w,
+                height: 37.h,
+                child: const Text('Nokia'),
+              ),
             ),
           ],
           onChanged: (_) {},
         ),
+        SizedBox(height: 5.h),
       ],
     );
   }
