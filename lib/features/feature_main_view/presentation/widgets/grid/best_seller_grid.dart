@@ -65,7 +65,7 @@ class BestSellerGrid extends StatelessWidget {
             phones.bestSellerPhones!.length,
             (index) {
               return PhonePreviewBlock(
-                bestSellerPhone: phones.bestSellerPhones![0],
+                bestSellerPhone: phones.bestSellerPhones![index % 2],
               );
             },
           );

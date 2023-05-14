@@ -23,12 +23,12 @@ class BottomShopNavigationBar extends StatelessWidget {
         child: BottomNavigationBar(
           backgroundColor: AppColors.deepPurple,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.white,
+          selectedItemColor: AppColors.orange,
           unselectedItemColor: AppColors.white,
           currentIndex: 0,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.loupe),
+              icon: Icon(Icons.search),
               label: 'Explore',
             ),
             BottomNavigationBarItem(

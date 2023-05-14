@@ -35,19 +35,7 @@ class HomeView extends StatelessWidget {
             builder: (BuildContext context) {
               return Container(
                 margin: EdgeInsets.only(top: 20.h, right: 24.w, left: 24.w),
-                child: Column(
-                  children: [
-                    const FilterOptions(),
-                    SizedBox(height: 28.h),
-                    const Column(
-                      children: [
-                        FilterItem(label: 'Brand'),
-                        FilterItem(label: 'Price'),
-                        FilterItem(label: 'Size'),
-                      ],
-                    ),
-                  ],
-                ),
+                child: const FilterContent(),
               );
             },
           );
@@ -88,6 +76,29 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class FilterContent extends StatelessWidget {
+  const FilterContent({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const FilterOptions(),
+        SizedBox(height: 27.h),
+        const Column(
+          children: [
+            FilterItem(label: 'Brand'),
+            FilterItem(label: 'Price'),
+            FilterItem(label: 'Size'),
+          ],
+        ),
+      ],
     );
   }
 }
