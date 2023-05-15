@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_layout/features/feature_product_detail_view/domain/entities/product_detail.dart';
+import 'package:shop_layout/features/feature_product_detail_view/presentation/views/product_detail_view.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
@@ -56,7 +58,13 @@ class HotSalePreview extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const ProductDetailView(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.zero,
                   padding:

@@ -5,7 +5,6 @@ import '../../../../config/themes/light_theme/light_theme.dart';
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../../../core/constants/asset_paths/asset_paths.dart';
-import '../views/home_view.dart';
 import 'components/filter_content.dart';
 
 class GeoLocationInfo extends StatelessWidget {
