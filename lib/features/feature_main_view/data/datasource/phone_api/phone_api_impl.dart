@@ -7,7 +7,7 @@ import '../../../../../core/constants/api_constants/api_constants.dart';
 import 'phone_api.dart';
 
 class PhoneAPIImpl extends PhoneAPI {
-  final uri = Uri.https(APIConstants.domainName, APIConstants.path);
+  final uri = Uri.https(APIConstants.domainName, APIConstants.phonesPath);
 
   @override
   Future<Phones> loadPhones() {
