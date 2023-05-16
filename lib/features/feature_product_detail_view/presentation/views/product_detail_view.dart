@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
 import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
 import 'package:shop_layout/core/constants/asset_paths/asset_paths.dart';
+import 'package:shop_layout/features/feature_product_detail_view/domain/entities/product_detail.dart';
+import 'package:shop_layout/features/feature_product_detail_view/presentation/bloc/product_detail_bloc.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final productDetailBlocState = context.watch<ProductDetailBloc>().state;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.white,
@@ -61,19 +66,53 @@ class ProductDetailView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Container(
-            width: 300.w,
-            height: 200.w,
-            color: AppColors.deepPurple,
+          SizedBox(height: 30.h),
+          productDetailBlocState.when(
+            initial: () => const CircularProgressIndicator(),
+            loading: () => const CircularProgressIndicator(),
+            favorite: (ProductDetail product) =>
+                const CircularProgressIndicator(),
+            loaded: (ProductDetail product) {
+              return CarouselSlider.builder(
+                itemCount: product.images.length,
+                options: CarouselOptions(
+                  height: 349.h,
+                  viewportFraction: 0.7,
+                ),
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20.w)),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: AppColors.lightGrey,
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
+                    width: 226.w,
+                    height: 335.h,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20.w),
+                      child: Image.network(
+                        product.images[itemIndex],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
           ),
+          SizedBox(height: 7.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 20.h),
             decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
-                  color: AppColors.black,
-                  blurRadius: 10,
-                  spreadRadius: 1,
+                  color: AppColors.grey,
+                  blurRadius: 20,
                 ),
               ],
               color: AppColors.white,
