@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
 import 'package:shop_layout/core/constants/app_text_styles/app_text_styles.dart';
+import 'package:shop_layout/core/constants/asset_paths/asset_paths.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({super.key});
@@ -52,10 +53,8 @@ class ProductDetailView extends StatelessWidget {
               ),
             ),
             child: const Icon(
-              //TODO: fix star's size
               Icons.shop,
               color: AppColors.white,
-              size: 2,
             ),
           ),
         ],
@@ -64,14 +63,19 @@ class ProductDetailView extends StatelessWidget {
         children: [
           Container(
             width: 300.w,
-            height: 300.w,
+            height: 200.w,
             color: AppColors.deepPurple,
           ),
           Container(
-            width: 300,
-            height: 300,
             padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 20.h),
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.black,
+                  blurRadius: 10,
+                  spreadRadius: 1,
+                ),
+              ],
               color: AppColors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.w),
@@ -79,6 +83,7 @@ class ProductDetailView extends StatelessWidget {
               ),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,8 +98,10 @@ class ProductDetailView extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
+                        SizedBox(height: 5.h),
                         RatingBar.builder(
-                          initialRating: 5,
+                          itemSize: 20.w,
+                          initialRating: 4,
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
@@ -129,11 +136,169 @@ class ProductDetailView extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 32.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Shop',
+                        style: AppTextStyles.titleLarge
+                            .copyWith(fontWeight: FontWeight.w500)),
+                    Text('Details',
+                        style: AppTextStyles.titleLarge
+                            .copyWith(fontWeight: FontWeight.w500)),
+                    Text('Features',
+                        style: AppTextStyles.titleLarge
+                            .copyWith(fontWeight: FontWeight.w500)),
+                  ],
+                ),
+                SizedBox(height: 43.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ProductFeature(
+                        imagePath: AssetPaths.cpu, title: 'Exynos 990'),
+                    ProductFeature(
+                        imagePath: AssetPaths.camera, title: '108 + 12mp'),
+                    ProductFeature(imagePath: AssetPaths.chip, title: '8 GB'),
+                    ProductFeature(
+                        imagePath: AssetPaths.externalCard, title: '256 GB'),
+                  ],
+                ),
+                SizedBox(height: 29.h),
+                Text(
+                  'Select Color And Opacity',
+                  style: AppTextStyles.titleMedium.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: 14.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: AppColors.orange,
+                          child: Icon(
+                            Icons.check,
+                            color: AppColors.white,
+                          ),
+                        ),
+                        SizedBox(width: 18.w),
+                        CircleAvatar(
+                          backgroundColor: AppColors.deepPurple,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.orange,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 11.h,
+                              horizontal: 11.w,
+                            ),
+                            minimumSize: Size.zero,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.w),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            '128 GB',
+                            style: AppTextStyles.bodyMedium.copyWith(
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 20.w),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.white,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 11.h,
+                              horizontal: 11.w,
+                            ),
+                            minimumSize: Size.zero,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.w),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            '128 GB',
+                            style: AppTextStyles.bodyMedium.copyWith(
+                              color: AppColors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 27.h),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.orange,
+                    padding: EdgeInsets.symmetric(
+                      vertical: 11.h,
+                      horizontal: 11.w,
+                    ),
+                    minimumSize: Size.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.w),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        'Add To Cart',
+                        style: AppTextStyles.titleMedium.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      Text(
+                        '\$1,500.00',
+                        style: AppTextStyles.titleMedium.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProductFeature extends StatelessWidget {
+  final imagePath;
+  final title;
+
+  const ProductFeature(
+      {super.key, required this.imagePath, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(imagePath),
+        SizedBox(height: 5.h),
+        Text(
+          title,
+          style: AppTextStyles.bodyMedium.copyWith(
+            color: AppColors.darkGrey,
+          ),
+        ),
+      ],
     );
   }
 }
