@@ -284,7 +284,6 @@ mixin _$ProductDetailState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ProductDetail product) loaded,
-    required TResult Function(ProductDetail product) favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -292,7 +291,6 @@ mixin _$ProductDetailState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ProductDetail product)? loaded,
-    TResult? Function(ProductDetail product)? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -300,7 +298,6 @@ mixin _$ProductDetailState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ProductDetail product)? loaded,
-    TResult Function(ProductDetail product)? favorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -309,7 +306,6 @@ mixin _$ProductDetailState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Favorite value) favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -317,7 +313,6 @@ mixin _$ProductDetailState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Favorite value)? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -325,7 +320,6 @@ mixin _$ProductDetailState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -389,7 +383,6 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ProductDetail product) loaded,
-    required TResult Function(ProductDetail product) favorite,
   }) {
     return initial();
   }
@@ -400,7 +393,6 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ProductDetail product)? loaded,
-    TResult? Function(ProductDetail product)? favorite,
   }) {
     return initial?.call();
   }
@@ -411,7 +403,6 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ProductDetail product)? loaded,
-    TResult Function(ProductDetail product)? favorite,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -426,7 +417,6 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Favorite value) favorite,
   }) {
     return initial(this);
   }
@@ -437,7 +427,6 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Favorite value)? favorite,
   }) {
     return initial?.call(this);
   }
@@ -448,7 +437,6 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -502,7 +490,6 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ProductDetail product) loaded,
-    required TResult Function(ProductDetail product) favorite,
   }) {
     return loading();
   }
@@ -513,7 +500,6 @@ class _$_Loading implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ProductDetail product)? loaded,
-    TResult? Function(ProductDetail product)? favorite,
   }) {
     return loading?.call();
   }
@@ -524,7 +510,6 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ProductDetail product)? loaded,
-    TResult Function(ProductDetail product)? favorite,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -539,7 +524,6 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Favorite value) favorite,
   }) {
     return loading(this);
   }
@@ -550,7 +534,6 @@ class _$_Loading implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Favorite value)? favorite,
   }) {
     return loading?.call(this);
   }
@@ -561,7 +544,6 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -650,7 +632,6 @@ class _$_Loaded implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ProductDetail product) loaded,
-    required TResult Function(ProductDetail product) favorite,
   }) {
     return loaded(product);
   }
@@ -661,7 +642,6 @@ class _$_Loaded implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ProductDetail product)? loaded,
-    TResult? Function(ProductDetail product)? favorite,
   }) {
     return loaded?.call(product);
   }
@@ -672,7 +652,6 @@ class _$_Loaded implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ProductDetail product)? loaded,
-    TResult Function(ProductDetail product)? favorite,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -687,7 +666,6 @@ class _$_Loaded implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Favorite value) favorite,
   }) {
     return loaded(this);
   }
@@ -698,7 +676,6 @@ class _$_Loaded implements _Loaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Favorite value)? favorite,
   }) {
     return loaded?.call(this);
   }
@@ -709,7 +686,6 @@ class _$_Loaded implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -725,160 +701,5 @@ abstract class _Loaded implements ProductDetailState {
   ProductDetail get product;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_FavoriteCopyWith<$Res> {
-  factory _$$_FavoriteCopyWith(
-          _$_Favorite value, $Res Function(_$_Favorite) then) =
-      __$$_FavoriteCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ProductDetail product});
-
-  $ProductDetailCopyWith<$Res> get product;
-}
-
-/// @nodoc
-class __$$_FavoriteCopyWithImpl<$Res>
-    extends _$ProductDetailStateCopyWithImpl<$Res, _$_Favorite>
-    implements _$$_FavoriteCopyWith<$Res> {
-  __$$_FavoriteCopyWithImpl(
-      _$_Favorite _value, $Res Function(_$_Favorite) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? product = null,
-  }) {
-    return _then(_$_Favorite(
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as ProductDetail,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductDetailCopyWith<$Res> get product {
-    return $ProductDetailCopyWith<$Res>(_value.product, (value) {
-      return _then(_value.copyWith(product: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_Favorite implements _Favorite {
-  const _$_Favorite({required this.product});
-
-  @override
-  final ProductDetail product;
-
-  @override
-  String toString() {
-    return 'ProductDetailState.favorite(product: $product)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Favorite &&
-            (identical(other.product, product) || other.product == product));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, product);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_FavoriteCopyWith<_$_Favorite> get copyWith =>
-      __$$_FavoriteCopyWithImpl<_$_Favorite>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ProductDetail product) loaded,
-    required TResult Function(ProductDetail product) favorite,
-  }) {
-    return favorite(product);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ProductDetail product)? loaded,
-    TResult? Function(ProductDetail product)? favorite,
-  }) {
-    return favorite?.call(product);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ProductDetail product)? loaded,
-    TResult Function(ProductDetail product)? favorite,
-    required TResult orElse(),
-  }) {
-    if (favorite != null) {
-      return favorite(product);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Favorite value) favorite,
-  }) {
-    return favorite(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Favorite value)? favorite,
-  }) {
-    return favorite?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Favorite value)? favorite,
-    required TResult orElse(),
-  }) {
-    if (favorite != null) {
-      return favorite(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Favorite implements ProductDetailState {
-  const factory _Favorite({required final ProductDetail product}) = _$_Favorite;
-
-  ProductDetail get product;
-  @JsonKey(ignore: true)
-  _$$_FavoriteCopyWith<_$_Favorite> get copyWith =>
       throw _privateConstructorUsedError;
 }
