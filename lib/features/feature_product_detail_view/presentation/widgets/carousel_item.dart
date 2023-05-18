@@ -20,7 +20,7 @@ class CarouselItem extends StatelessWidget {
           ),
         ],
       ),
-      width: 226.w,
+      width: 266.w,
       height: 335.h,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.w),

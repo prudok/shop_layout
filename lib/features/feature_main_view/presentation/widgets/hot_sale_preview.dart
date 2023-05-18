@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/features/feature_product_detail_view/domain/entities/product_detail.dart';
-import 'package:shop_layout/features/feature_product_detail_view/presentation/views/product_detail_view.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../../feature_product_detail_view/presentation/views/product_detail_view.dart';
 import '../../domain/entities/home_store_phone/home_store_phone.dart';
 
 class HotSalePreview extends StatelessWidget {
@@ -31,7 +30,7 @@ class HotSalePreview extends StatelessWidget {
               SizedBox(height: 10.h),
               phone.isNew
                   ? CircleAvatar(
-                      radius: 13.w,
+                      radius: 13.h,
                       backgroundColor: AppColors.orange,
                       child: Text(
                         'New',
@@ -59,7 +58,7 @@ class HotSalePreview extends StatelessWidget {
               SizedBox(height: 10.h),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (BuildContext context) => const ProductDetailView(),
                     ),

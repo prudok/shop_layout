@@ -16,8 +16,8 @@ class ShopButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.orange,
         padding: EdgeInsets.symmetric(
-          vertical: 11.h,
-          horizontal: 11.w,
+          vertical: 7.w,
+          horizontal: 7.w,
         ),
         minimumSize: Size.zero,
         shape: RoundedRectangleBorder(

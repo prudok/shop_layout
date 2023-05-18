@@ -19,46 +19,71 @@ class ProductDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     final productDetailBlocState = context.watch<ProductDetailBloc>().state;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.white,
-        centerTitle: true,
-        title: const Text(
-          'Product Details',
-          style: AppTextStyles.titleLarge,
-        ),
-        leading: const GoBackButton(),
-        actions: const [
-          ShopButton(),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          const ProductDetailAppBar(),
         ],
-      ),
-      body: ListView(
-        children: [
-          SizedBox(height: 30.h),
-          productDetailBlocState.when(
-            initial: () => SizedBox(
-              height: 349.h,
-              child: const Center(child: CircularProgressIndicator()),
-            ),
-            loading: () => SizedBox(
-              height: 349.h,
-              child: const Center(child: CircularProgressIndicator()),
-            ),
-            loaded: (ProductDetail product) {
-              return CarouselSlider.builder(
-                itemCount: product.images.length,
-                options: CarouselOptions(
+        body: Container(
+          color: AppColors.white,
+          child: ListView(
+            padding: const EdgeInsets.all(0),
+            children: [
+              SizedBox(height: 11.h),
+              productDetailBlocState.when(
+                initial: () => SizedBox(
                   height: 349.h,
-                  viewportFraction: 0.7,
+                  child: const Center(child: CircularProgressIndicator()),
                 ),
-                itemBuilder:
-                    (BuildContext context, int itemIndex, int pageViewIndex) {
-                  return CarouselItem(imageLink: product.images[itemIndex],);
+                loading: () => SizedBox(
+                  height: 349.h,
+                  child: const Center(child: CircularProgressIndicator()),
+                ),
+                loaded: (ProductDetail product) {
+                  return CarouselSlider.builder(
+                    itemCount: product.images.length,
+                    options: CarouselOptions(
+                      
+                      height: 349.h,
+                      viewportFraction: 0.75,
+                    ),
+                    itemBuilder:
+                        (BuildContext context, int itemIndex, int pageViewIndex) {
+                      return CarouselItem(
+                        imageLink: product.images[itemIndex],
+                      );
+                    },
+                  );
                 },
-              );
-            },
+              ),
+              SizedBox(height: 7.h),
+              const DetailInfoBlock(),
+            ],
           ),
-          SizedBox(height: 7.h),
-          const DetailInfoBlock(),
+        ),
+      ),
+    );
+  }
+}
+
+class ProductDetailAppBar extends StatelessWidget {
+  const ProductDetailAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const SliverAppBar(
+      backgroundColor: AppColors.white,
+      // centerTitle: true,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          GoBackButton(),
+          Text(
+            'Product Details',
+            style: AppTextStyles.titleLarge,
+          ),
+          ShopButton(),
         ],
       ),
     );
