@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../../core/constants/asset_paths/asset_paths.dart';
 
 class ShopButton extends StatelessWidget {
   const ShopButton({
@@ -24,9 +24,9 @@ class ShopButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.w),
         ),
       ),
-      child: const Icon(
-        Icons.shop,
-        color: AppColors.white,
+      child: Image.asset(
+        AssetPaths.shop,
+        height: 22.h,
       ),
     );
   }

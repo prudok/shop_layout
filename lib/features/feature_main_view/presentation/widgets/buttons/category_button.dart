@@ -4,44 +4,43 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 
-class CategoryButton extends StatefulWidget {
-  const CategoryButton(
-      {super.key, required this.title, required this.imagePath});
-
+class CategoryButton extends StatelessWidget {
   final String title;
   final String imagePath;
+  final bool isPressed;
 
-  @override
-  State<CategoryButton> createState() => _CategoryButtonState();
-}
+  const CategoryButton({
+    super.key,
+    required this.title,
+    required this.imagePath,
+    required this.isPressed,
+  });
 
-class _CategoryButtonState extends State<CategoryButton> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {
-          },
+          onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.white,
+            backgroundColor: isPressed ? AppColors.orange : AppColors.white,
             padding: EdgeInsets.symmetric(
               horizontal: 20.h,
               vertical: 20.w,
             ),
           ),
           child: Image.asset(
-            widget.imagePath,
+            imagePath,
             width: 30.w,
             height: 30.h,
-            color: AppColors.darkGrey,
+            color: isPressed ? AppColors.white : AppColors.darkGrey,
           ),
         ),
         SizedBox(
           height: 7.h,
         ),
         Text(
-          widget.title,
+          title,
           style: AppTextStyles.bodyMedium.copyWith(
             color: AppColors.deepPurple,
             fontWeight: FontWeight.bold,

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/core/constants/frame_sizes/frame_size.dart';
 import 'package:shop_layout/features/feature_main_view/presentation/widgets/hot_sales_phone_row.dart';
-import 'package:shop_layout/features/feature_main_view/presentation/widgets/section_titles/best_seller_title.dart';
+import 'package:shop_layout/features/feature_main_view/presentation/widgets/titles/best_seller_title.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../bloc/phone_seller_bloc.dart';
@@ -12,8 +12,8 @@ import '../widgets/category_options.dart';
 import '../widgets/geo_location_info.dart';
 import '../widgets/grid/best_seller_grid.dart';
 import '../widgets/searching_line.dart';
-import '../widgets/section_titles/category_title.dart';
-import '../widgets/section_titles/hot_sales_title.dart';
+import '../widgets/titles/category_title.dart';
+import '../widgets/titles/hot_sales_title.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

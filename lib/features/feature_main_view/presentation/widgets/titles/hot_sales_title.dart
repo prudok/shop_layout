@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
 
+import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 
 class HotSalesTitle extends StatelessWidget {

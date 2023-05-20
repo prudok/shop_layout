@@ -42,7 +42,6 @@ class ProductDetailView extends StatelessWidget {
                   return CarouselSlider.builder(
                     itemCount: product.images.length,
                     options: CarouselOptions(
-                      
                       height: 349.h,
                       viewportFraction: 0.75,
                     ),
@@ -73,8 +72,8 @@ class ProductDetailAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SliverAppBar(
+      floating: false,
       backgroundColor: AppColors.white,
-      // centerTitle: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

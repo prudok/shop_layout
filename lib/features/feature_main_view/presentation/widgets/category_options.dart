@@ -8,7 +8,6 @@ class CategoryOptions extends StatelessWidget {
   const CategoryOptions({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,26 +20,31 @@ class CategoryOptions extends StatelessWidget {
           const CategoryButton(
             title: 'Phones',
             imagePath: AssetPaths.smartPhone,
+            isPressed: true,
           ),
           SizedBox(width: 23.w),
           const CategoryButton(
             title: 'Computer',
             imagePath: AssetPaths.computer,
+            isPressed: false,
           ),
           SizedBox(width: 23.w),
           const CategoryButton(
             title: 'Health',
             imagePath: AssetPaths.pulsingHeart,
+            isPressed: false,
           ),
           SizedBox(width: 23.w),
           const CategoryButton(
             title: 'Books',
             imagePath: AssetPaths.books,
+            isPressed: false,
           ),
           SizedBox(width: 23.w),
           const CategoryButton(
             title: 'Computer',
             imagePath: AssetPaths.smartPhone,
+            isPressed: false,
           ),
           SizedBox(width: 23.w),
         ],
