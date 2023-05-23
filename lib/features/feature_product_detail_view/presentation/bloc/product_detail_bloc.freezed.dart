@@ -20,18 +20,21 @@ mixin _$ProductDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() addToFavorite,
+    required TResult Function(ProductDetail phone) buy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? addToFavorite,
+    TResult? Function(ProductDetail phone)? buy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? addToFavorite,
+    TResult Function(ProductDetail phone)? buy,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ProductDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_addToFavorite value) addToFavorite,
+    required TResult Function(_buy value) buy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_addToFavorite value)? addToFavorite,
+    TResult? Function(_buy value)? buy,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_addToFavorite value)? addToFavorite,
+    TResult Function(_buy value)? buy,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() addToFavorite,
+    required TResult Function(ProductDetail phone) buy,
   }) {
     return started();
   }
@@ -122,6 +129,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? addToFavorite,
+    TResult? Function(ProductDetail phone)? buy,
   }) {
     return started?.call();
   }
@@ -131,6 +139,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? addToFavorite,
+    TResult Function(ProductDetail phone)? buy,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +153,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_addToFavorite value) addToFavorite,
+    required TResult Function(_buy value) buy,
   }) {
     return started(this);
   }
@@ -153,6 +163,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_addToFavorite value)? addToFavorite,
+    TResult? Function(_buy value)? buy,
   }) {
     return started?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_addToFavorite value)? addToFavorite,
+    TResult Function(_buy value)? buy,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -215,6 +227,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() addToFavorite,
+    required TResult Function(ProductDetail phone) buy,
   }) {
     return addToFavorite();
   }
@@ -224,6 +237,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? addToFavorite,
+    TResult? Function(ProductDetail phone)? buy,
   }) {
     return addToFavorite?.call();
   }
@@ -233,6 +247,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? addToFavorite,
+    TResult Function(ProductDetail phone)? buy,
     required TResult orElse(),
   }) {
     if (addToFavorite != null) {
@@ -246,6 +261,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_addToFavorite value) addToFavorite,
+    required TResult Function(_buy value) buy,
   }) {
     return addToFavorite(this);
   }
@@ -255,6 +271,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_addToFavorite value)? addToFavorite,
+    TResult? Function(_buy value)? buy,
   }) {
     return addToFavorite?.call(this);
   }
@@ -264,6 +281,7 @@ class _$_addToFavorite implements _addToFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_addToFavorite value)? addToFavorite,
+    TResult Function(_buy value)? buy,
     required TResult orElse(),
   }) {
     if (addToFavorite != null) {
@@ -275,6 +293,152 @@ class _$_addToFavorite implements _addToFavorite {
 
 abstract class _addToFavorite implements ProductDetailEvent {
   const factory _addToFavorite() = _$_addToFavorite;
+}
+
+/// @nodoc
+abstract class _$$_buyCopyWith<$Res> {
+  factory _$$_buyCopyWith(_$_buy value, $Res Function(_$_buy) then) =
+      __$$_buyCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ProductDetail phone});
+
+  $ProductDetailCopyWith<$Res> get phone;
+}
+
+/// @nodoc
+class __$$_buyCopyWithImpl<$Res>
+    extends _$ProductDetailEventCopyWithImpl<$Res, _$_buy>
+    implements _$$_buyCopyWith<$Res> {
+  __$$_buyCopyWithImpl(_$_buy _value, $Res Function(_$_buy) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? phone = null,
+  }) {
+    return _then(_$_buy(
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as ProductDetail,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductDetailCopyWith<$Res> get phone {
+    return $ProductDetailCopyWith<$Res>(_value.phone, (value) {
+      return _then(_value.copyWith(phone: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_buy implements _buy {
+  const _$_buy({required this.phone});
+
+  @override
+  final ProductDetail phone;
+
+  @override
+  String toString() {
+    return 'ProductDetailEvent.buy(phone: $phone)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_buy &&
+            (identical(other.phone, phone) || other.phone == phone));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, phone);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_buyCopyWith<_$_buy> get copyWith =>
+      __$$_buyCopyWithImpl<_$_buy>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() addToFavorite,
+    required TResult Function(ProductDetail phone) buy,
+  }) {
+    return buy(phone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? addToFavorite,
+    TResult? Function(ProductDetail phone)? buy,
+  }) {
+    return buy?.call(phone);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? addToFavorite,
+    TResult Function(ProductDetail phone)? buy,
+    required TResult orElse(),
+  }) {
+    if (buy != null) {
+      return buy(phone);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_addToFavorite value) addToFavorite,
+    required TResult Function(_buy value) buy,
+  }) {
+    return buy(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_addToFavorite value)? addToFavorite,
+    TResult? Function(_buy value)? buy,
+  }) {
+    return buy?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_addToFavorite value)? addToFavorite,
+    TResult Function(_buy value)? buy,
+    required TResult orElse(),
+  }) {
+    if (buy != null) {
+      return buy(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _buy implements ProductDetailEvent {
+  const factory _buy({required final ProductDetail phone}) = _$_buy;
+
+  ProductDetail get phone;
+  @JsonKey(ignore: true)
+  _$$_buyCopyWith<_$_buy> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

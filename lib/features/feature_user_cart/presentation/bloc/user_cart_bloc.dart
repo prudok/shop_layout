@@ -7,8 +7,8 @@ part 'user_cart_state.dart';
 
 class UserCartBloc extends Bloc<UserCartEvent, UserCartState> {
   UserCartBloc() : super(_Initial()) {
-    on<UserCartEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<UserCartEvent>((event, emit) {});
+    on<UserCartEventAdd>((event, emit) => {});
+    on<UserCartEventRemove>((event, emit) => {});
   }
 }
