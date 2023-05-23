@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/features/feature_main_view/presentation/bloc/phone_seller_bloc.dart';
 import 'package:shop_layout/features/feature_product_detail_view/presentation/bloc/product_detail_bloc.dart';
+import 'package:shop_layout/features/feature_user_cart/presentation/views/user_cart_view.dart';
 
 import '../config/themes/light_theme/light_theme.dart';
 import 'feature_main_view/presentation/views/home_view.dart';
@@ -31,7 +32,8 @@ class ShopLayout extends StatelessWidget {
           ),
         );
       },
-      child: const HomeView(),
+      child: const UserCartView(),
+      // child: const HomeView(),
     );
   }
 }
