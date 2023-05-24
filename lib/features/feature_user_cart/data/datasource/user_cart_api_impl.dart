@@ -10,7 +10,7 @@ class UserCartAPIImpl extends UserCartAPI {
 
   final uri = Uri.https(
     APIConstants.domainName,
-    APIConstants.productDetailPath,
+    APIConstants.userCartPath,
   );
 
   @override

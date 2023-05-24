@@ -126,52 +126,62 @@ class UserProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Icon(Icons.phone, color: AppColors.white),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    final userCartBloc = context.watch<UserCartBloc>();
+
+    return userCartBloc.state.maybeWhen(
+      loaded: (userCart) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Galaxy Note 20 Ultra',
-              style: AppTextStyles.bodyLarge.copyWith(color: AppColors.white),
+            const Icon(Icons.phone, color: AppColors.white),
+            // Convert into listView.builder
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  userCart.basket[0].title,
+                  style:
+                      AppTextStyles.bodyLarge.copyWith(color: AppColors.white),
+                ),
+                Text(
+                  '\$3000.00',
+                  style:
+                      AppTextStyles.bodyLarge.copyWith(color: AppColors.orange),
+                ),
+              ],
             ),
-            Text(
-              '\$3000.00',
-              style: AppTextStyles.bodyLarge.copyWith(color: AppColors.orange),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.grey,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.remove,
+                      color: AppColors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    '2',
+                    style: AppTextStyles.bodyLarge.copyWith(
+                      color: AppColors.white,
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.add, color: AppColors.white),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
+            const Icon(Icons.close, color: AppColors.white)
           ],
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: AppColors.grey,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.remove,
-                  color: AppColors.white,
-                ),
-                onPressed: () {},
-              ),
-              Text(
-                '2',
-                style: AppTextStyles.bodyLarge.copyWith(
-                  color: AppColors.white,
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.add, color: AppColors.white),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-        const Icon(Icons.close, color: AppColors.white)
-      ],
+        );
+      },
+      orElse: () => const CircularProgressIndicator(),
     );
   }
 }

@@ -468,22 +468,22 @@ mixin _$ProductDetailState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ProductDetailLoadingState value) loading,
+    required TResult Function(_ProductDetailLoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ProductDetailLoadingState value)? loading,
+    TResult? Function(_ProductDetailLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ProductDetailLoadingState value)? loading,
+    TResult Function(_ProductDetailLoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -579,8 +579,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ProductDetailLoadingState value) loading,
+    required TResult Function(_ProductDetailLoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -589,8 +589,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ProductDetailLoadingState value)? loading,
+    TResult? Function(_ProductDetailLoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -599,8 +599,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ProductDetailLoadingState value)? loading,
+    TResult Function(_ProductDetailLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -615,24 +615,27 @@ abstract class _Initial implements ProductDetailState {
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$_ProductDetailLoadingStateCopyWith<$Res> {
+  factory _$$_ProductDetailLoadingStateCopyWith(
+          _$_ProductDetailLoadingState value,
+          $Res Function(_$_ProductDetailLoadingState) then) =
+      __$$_ProductDetailLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$ProductDetailStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$_ProductDetailLoadingStateCopyWithImpl<$Res>
+    extends _$ProductDetailStateCopyWithImpl<$Res, _$_ProductDetailLoadingState>
+    implements _$$_ProductDetailLoadingStateCopyWith<$Res> {
+  __$$_ProductDetailLoadingStateCopyWithImpl(
+      _$_ProductDetailLoadingState _value,
+      $Res Function(_$_ProductDetailLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_ProductDetailLoadingState implements _ProductDetailLoadingState {
+  const _$_ProductDetailLoadingState();
 
   @override
   String toString() {
@@ -642,7 +645,8 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType &&
+            other is _$_ProductDetailLoadingState);
   }
 
   @override
@@ -686,8 +690,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ProductDetailLoadingState value) loading,
+    required TResult Function(_ProductDetailLoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -696,8 +700,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ProductDetailLoadingState value)? loading,
+    TResult? Function(_ProductDetailLoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -706,8 +710,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ProductDetailLoadingState value)? loading,
+    TResult Function(_ProductDetailLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -717,14 +721,16 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements ProductDetailState {
-  const factory _Loading() = _$_Loading;
+abstract class _ProductDetailLoadingState implements ProductDetailState {
+  const factory _ProductDetailLoadingState() = _$_ProductDetailLoadingState;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$_ProductDetailLoadedStateCopyWith<$Res> {
+  factory _$$_ProductDetailLoadedStateCopyWith(
+          _$_ProductDetailLoadedState value,
+          $Res Function(_$_ProductDetailLoadedState) then) =
+      __$$_ProductDetailLoadedStateCopyWithImpl<$Res>;
   @useResult
   $Res call({ProductDetail product});
 
@@ -732,10 +738,11 @@ abstract class _$$_LoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$ProductDetailStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$_ProductDetailLoadedStateCopyWithImpl<$Res>
+    extends _$ProductDetailStateCopyWithImpl<$Res, _$_ProductDetailLoadedState>
+    implements _$$_ProductDetailLoadedStateCopyWith<$Res> {
+  __$$_ProductDetailLoadedStateCopyWithImpl(_$_ProductDetailLoadedState _value,
+      $Res Function(_$_ProductDetailLoadedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -743,7 +750,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? product = null,
   }) {
-    return _then(_$_Loaded(
+    return _then(_$_ProductDetailLoadedState(
       product: null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -762,8 +769,8 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded({required this.product});
+class _$_ProductDetailLoadedState implements _ProductDetailLoadedState {
+  const _$_ProductDetailLoadedState({required this.product});
 
   @override
   final ProductDetail product;
@@ -777,7 +784,7 @@ class _$_Loaded implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$_ProductDetailLoadedState &&
             (identical(other.product, product) || other.product == product));
   }
 
@@ -787,8 +794,9 @@ class _$_Loaded implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$_ProductDetailLoadedStateCopyWith<_$_ProductDetailLoadedState>
+      get copyWith => __$$_ProductDetailLoadedStateCopyWithImpl<
+          _$_ProductDetailLoadedState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -828,8 +836,8 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ProductDetailLoadingState value) loading,
+    required TResult Function(_ProductDetailLoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -838,8 +846,8 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ProductDetailLoadingState value)? loading,
+    TResult? Function(_ProductDetailLoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -848,8 +856,8 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ProductDetailLoadingState value)? loading,
+    TResult Function(_ProductDetailLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -859,11 +867,12 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements ProductDetailState {
-  const factory _Loaded({required final ProductDetail product}) = _$_Loaded;
+abstract class _ProductDetailLoadedState implements ProductDetailState {
+  const factory _ProductDetailLoadedState(
+      {required final ProductDetail product}) = _$_ProductDetailLoadedState;
 
   ProductDetail get product;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ProductDetailLoadedStateCopyWith<_$_ProductDetailLoadedState>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -20,7 +20,8 @@ UserCart _$UserCartFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserCart {
-  List<UserCartPhone> get basket => throw _privateConstructorUsedError;
+  List<UserCartPhone> get basket =>
+      throw _privateConstructorUsedError; // required List<UserCartPhone> basket,
   String get delivery => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
@@ -142,6 +143,7 @@ class _$_UserCart with DiagnosticableTreeMixin implements _UserCart {
   @override
   @JsonKey()
   final List<UserCartPhone> basket;
+// required List<UserCartPhone> basket,
   @override
   final String delivery;
   @override
@@ -207,7 +209,7 @@ abstract class _UserCart implements UserCart {
 
   @override
   List<UserCartPhone> get basket;
-  @override
+  @override // required List<UserCartPhone> basket,
   String get delivery;
   @override
   String get id;

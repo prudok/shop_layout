@@ -10,6 +10,7 @@ part 'user_cart.g.dart';
 class UserCart with _$UserCart {
   factory UserCart({
     @Default([]) List<UserCartPhone> basket,
+    // required List<UserCartPhone> basket,
     required String delivery,
     required String id,
     required int total,
