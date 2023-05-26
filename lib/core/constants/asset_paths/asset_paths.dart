@@ -14,5 +14,6 @@ class AssetPaths {
   static const String chip = 'assets/images/chip.png';
   static const String externalCard = 'assets/images/external_card.png';
   static const String camera = 'assets/images/camera.png';
+  static const String trash = 'assets/images/trash.png';
   static const String markPro = 'assets/fonts/MarkPro.ttf';
 }

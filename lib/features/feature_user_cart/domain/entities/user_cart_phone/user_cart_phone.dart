@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-
 part 'user_cart_phone.freezed.dart';
 part 'user_cart_phone.g.dart';
 
