@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/core/constants/asset_paths/asset_paths.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../../../core/constants/asset_paths/asset_paths.dart';
 import '../../domain/entities/user_cart_phone/user_cart_phone.dart';
 
 class UserProductItem extends StatelessWidget {
@@ -25,7 +25,7 @@ class UserProductItem extends StatelessWidget {
             height: 88.h,
           ),
         ),
-        SizedBox(width: 17.w),
+        SizedBox(width: 5.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,12 +33,18 @@ class UserProductItem extends StatelessWidget {
               width: 100.w,
               child: Text(
                 userCartPhone.title,
-                style: AppTextStyles.bodyLarge.copyWith(color: AppColors.white),
+                style: AppTextStyles.bodyLarge.copyWith(
+                  color: AppColors.white,
+                  fontSize: 20,
+                ),
               ),
             ),
             Text(
               '\$${userCartPhone.price}',
-              style: AppTextStyles.bodyLarge.copyWith(color: AppColors.orange),
+              style: AppTextStyles.bodyLarge.copyWith(
+                color: AppColors.orange,
+                fontSize: 20,
+              ),
             ),
           ],
         ),
@@ -79,7 +85,7 @@ class UserProductItem extends StatelessWidget {
           ),
         ),
         SizedBox(width: 5.w),
-        Image.asset(AssetPaths.trash),
+        Image.asset(AssetPaths.trash, color: AppColors.darkGrey),
       ],
     );
   }

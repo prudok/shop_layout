@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
 
+import '../../../../core/constants/app_colors/app_colors.dart';
 import '../bloc/user_cart_bloc.dart';
 import 'user_product_item.dart';
 
@@ -18,6 +18,7 @@ class UserProductBuilder extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 300.h,
           child: ListView.separated(
+            physics: const ClampingScrollPhysics(),
             itemCount: userCart.basket.length,
             itemBuilder: (BuildContext context, int index) {
               return UserProductItem(userCartPhone: userCart.basket[index]);

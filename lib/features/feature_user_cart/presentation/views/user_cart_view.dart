@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_layout/features/feature_user_cart/presentation/widgets/app_bars/user_cart_app_bar.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
@@ -12,12 +13,10 @@ class UserCartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final productDetailBloc = context.watch<ProductDetailBloc>();
-    // final userCartBloc = context.watch<UserCartBloc>();
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          const ProductDetailAppBar(),
+          const UserCartAppBar(),
         ],
         body: ListView(
           children: [
@@ -32,11 +31,14 @@ class UserCartView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 40.h),
             Container(
               decoration: const BoxDecoration(
                 color: AppColors.deepPurple,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
               ),
               child: Column(
                 children: [
@@ -46,17 +48,16 @@ class UserCartView extends StatelessWidget {
                     child: const UserProductBuilder(),
                   ),
                   SizedBox(height: 44.h),
-                  const Divider(),
+                  const Divider(
+                    color: AppColors.darkGrey,
+                  ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 33.w),
                     child: const TransactionDetailRow(),
                   ),
-                  SizedBox(height: 12.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 33.w),
-                    child: const TransactionDetailRow(),
+                  const Divider(
+                    color: AppColors.darkGrey,
                   ),
-                  const Divider(),
                   SizedBox(height: 41.h),
                   ElevatedButton(
                     onPressed: () {},
@@ -85,5 +86,3 @@ class UserCartView extends StatelessWidget {
     );
   }
 }
-
-
