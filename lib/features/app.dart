@@ -37,8 +37,7 @@ class ShopLayout extends StatelessWidget {
           ),
         );
       },
-      child: const UserCartView(),
-      // child: const HomeView(),
+      child: const HomeView(),
     );
   }
 }

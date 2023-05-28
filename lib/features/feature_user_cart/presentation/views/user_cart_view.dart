@@ -4,7 +4,6 @@ import 'package:shop_layout/features/feature_user_cart/presentation/widgets/app_
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
-import '../../../feature_product_detail_view/presentation/views/product_detail_view.dart';
 import '../widgets/transaction_detail_row.dart';
 import '../widgets/user_product_builder.dart';
 
@@ -31,7 +30,7 @@ class UserCartView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 40.h),
+            SizedBox(height: 30.h),
             Container(
               decoration: const BoxDecoration(
                 color: AppColors.deepPurple,
@@ -42,12 +41,12 @@ class UserCartView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 80.h),
+                  SizedBox(height: 22.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 33.w),
                     child: const UserProductBuilder(),
                   ),
-                  SizedBox(height: 44.h),
+                  SizedBox(height: 5.h),
                   const Divider(
                     color: AppColors.darkGrey,
                   ),
@@ -60,10 +59,20 @@ class UserCartView extends StatelessWidget {
                   ),
                   SizedBox(height: 41.h),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Items Ordered'),
+                          backgroundColor: AppColors.deepPurple,
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
-                          vertical: 11.h, horizontal: 118.w),
+                        vertical: 11.h,
+                        horizontal: 118.w,
+                      ),
                       backgroundColor: AppColors.orange,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
