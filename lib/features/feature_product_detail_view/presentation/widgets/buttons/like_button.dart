@@ -1,20 +1,28 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 
-class LikeButton extends StatelessWidget {
+class LikeButton extends StatefulWidget {
   const LikeButton({
     super.key,
   });
 
   @override
+  State<LikeButton> createState() => _LikeButtonState();
+}
+
+class _LikeButtonState extends State<LikeButton> {
+  bool _isFavorite = false;
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        setState(() {
+          _isFavorite = !_isFavorite;
+        });
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.deepPurple,
         padding: EdgeInsets.symmetric(
@@ -26,9 +34,9 @@ class LikeButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.w),
         ),
       ),
-      child: const Icon(
-        Icons.favorite_outline,
-        color: AppColors.white,
+      child: Icon(
+        _isFavorite ? Icons.favorite : Icons.favorite_outline,
+        color: _isFavorite ? AppColors.orange : AppColors.white,
       ),
     );
   }

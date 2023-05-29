@@ -17,9 +17,13 @@ class HotSalePreview extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          child: Image.network(
-            phone.pictureUrl,
-            fit: BoxFit.cover,
+          child: SizedBox(
+            width: 310.w,
+            height: 182.h,
+            child: Image.network(
+              phone.pictureUrl,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         Padding(

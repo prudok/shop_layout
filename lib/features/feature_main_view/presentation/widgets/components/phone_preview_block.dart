@@ -5,11 +5,17 @@ import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../../domain/entities/best_seller_phone/best_seller_phone.dart';
 
-class PhonePreviewBlock extends StatelessWidget {
+class PhonePreviewBlock extends StatefulWidget {
   const PhonePreviewBlock({super.key, required this.bestSellerPhone});
 
   final BestSellerPhone bestSellerPhone;
 
+  @override
+  State<PhonePreviewBlock> createState() => _PhonePreviewBlockState();
+}
+
+class _PhonePreviewBlockState extends State<PhonePreviewBlock> {
+  bool _isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +32,7 @@ class PhonePreviewBlock extends StatelessWidget {
                 width: 180.w,
                 height: 155.h,
                 child: Image.network(
-                  bestSellerPhone.pictureUrl,
+                  widget.bestSellerPhone.pictureUrl,
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -38,7 +44,7 @@ class PhonePreviewBlock extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          '\$${bestSellerPhone.discountPrice}',
+                          '\$${widget.bestSellerPhone.discountPrice}',
                           style: AppTextStyles.bodyLarge.copyWith(
                             color: AppColors.deepPurple,
                             fontWeight: FontWeight.bold,
@@ -46,7 +52,7 @@ class PhonePreviewBlock extends StatelessWidget {
                         ),
                         SizedBox(width: 7.w),
                         Text(
-                          '\$${bestSellerPhone.priceWithoutDiscount}',
+                          '\$${widget.bestSellerPhone.priceWithoutDiscount}',
                           style: AppTextStyles.bodyMedium.copyWith(
                             decoration: TextDecoration.lineThrough,
                           ),
@@ -55,7 +61,7 @@ class PhonePreviewBlock extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      bestSellerPhone.title,
+                      widget.bestSellerPhone.title,
                       style: AppTextStyles.bodyMedium,
                     ),
                   ],
@@ -67,15 +73,19 @@ class PhonePreviewBlock extends StatelessWidget {
             top: 0.h,
             right: 0.w,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _isFavorite = !_isFavorite;
+                });
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.white,
                 padding: EdgeInsets.zero,
                 shape: const CircleBorder(),
                 shadowColor: AppColors.shadow,
               ),
-              child: const Icon(
-                Icons.favorite_outline,
+              child: Icon(
+                _isFavorite ? Icons.favorite : Icons.favorite_outline,
                 color: AppColors.orange,
               ),
             ),

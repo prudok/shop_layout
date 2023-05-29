@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/features/feature_user_cart/presentation/widgets/app_bars/user_cart_app_bar.dart';
+
+import '../widgets/app_bars/user_cart_app_bar.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
