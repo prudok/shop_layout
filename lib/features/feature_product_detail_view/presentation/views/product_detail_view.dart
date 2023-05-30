@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/app_text_styles/app_text_styles.dart';
@@ -29,15 +30,20 @@ class ProductDetailView extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             children: [
               SizedBox(height: 11.h),
-              productDetailBlocState.when(
-                initial: () => SizedBox(
-                  height: 349.h,
-                  child: const Center(child: CircularProgressIndicator()),
-                ),
-                loading: () => SizedBox(
-                  height: 349.h,
-                  child: const Center(child: CircularProgressIndicator()),
-                ),
+              productDetailBlocState.maybeWhen(
+                loading: () {
+                  return Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: AppColors.white,
+                      ),
+                      height: 349.h,
+                    ),
+                  );
+                },
                 loaded: (ProductDetail product) {
                   return CarouselSlider.builder(
                     itemCount: product.images.length,
@@ -45,13 +51,16 @@ class ProductDetailView extends StatelessWidget {
                       height: 349.h,
                       viewportFraction: 0.75,
                     ),
-                    itemBuilder:
-                        (BuildContext context, int itemIndex, int pageViewIndex) {
+                    itemBuilder: (BuildContext context, int itemIndex,
+                        int pageViewIndex) {
                       return CarouselItem(
                         imageLink: product.images[itemIndex],
                       );
                     },
                   );
+                },
+                orElse: () {
+                  return const SizedBox();
                 },
               ),
               SizedBox(height: 7.h),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,13 +18,19 @@ class HotSalePreview extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          child: SizedBox(
-            width: 310.w,
-            height: 182.h,
-            child: Image.network(
-              phone.pictureUrl,
-              fit: BoxFit.cover,
+          child: CachedNetworkImage(
+            imageUrl: phone.pictureUrl,
+            imageBuilder: (context, imageProvider) => Container(
+              width: 310.w,
+              height: 182.h,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         Padding(
@@ -64,7 +71,8 @@ class HotSalePreview extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (BuildContext context) => const ProductDetailView(),
+                      builder: (BuildContext context) =>
+                          const ProductDetailView(),
                     ),
                   );
                 },

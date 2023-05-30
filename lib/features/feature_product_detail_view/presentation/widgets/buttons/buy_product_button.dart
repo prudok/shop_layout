@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_layout/features/feature_product_detail_view/domain/entities/product_detail.dart';
+import 'package:shop_layout/features/feature_user_cart/presentation/views/user_cart_view.dart';
 
 import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
@@ -15,7 +16,7 @@ class BuyProductButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productDetailBloc = context.watch<ProductDetailBloc>();
-    late final phone;
+    late final ProductDetail phone;
     productDetailBloc.state.maybeWhen(
       loaded: (ProductDetail product) {
         phone = product;
@@ -36,6 +37,11 @@ class BuyProductButton extends StatelessWidget {
       ),
       onPressed: () {
         productDetailBloc.add(ProductDetailEvent.buy(phone: phone));
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const UserCartView(),
+          ),
+        );
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

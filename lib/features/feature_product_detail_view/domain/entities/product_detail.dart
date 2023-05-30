@@ -14,9 +14,7 @@ class ProductDetail with _$ProductDetail {
     required String id,
     required List<String> images,
     required bool isFavorites,
-    //TODO: refactor line below
     required int price,
-    /////////////////////
     required double rating,
     required String sd,
     required String ssd,

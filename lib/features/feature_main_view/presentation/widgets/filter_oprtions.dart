@@ -43,7 +43,6 @@ class FilterOptions extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            //TODO: Implement filtering function
             Navigator.of(context).pop();
           },
           style: ElevatedButton.styleFrom(

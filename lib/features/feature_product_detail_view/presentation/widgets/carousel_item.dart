@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,10 +25,21 @@ class CarouselItem extends StatelessWidget {
       height: 335.h,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.w),
-        child: Image.network(
-          imageLink,
-          fit: BoxFit.cover,
+        child: CachedNetworkImage(
+          imageUrl: imageLink,
+          imageBuilder: (context, imageProvider) => Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: imageProvider,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ),
+        // child: Image.network(
+        //   imageLink,
+        //   fit: BoxFit.cover,
+        // ),
       ),
     );
   }

@@ -9,13 +9,6 @@ class PhoneRepositoryImpl extends PhoneRepository {
   PhoneRepositoryImpl(this.phoneAPI);
 
   @override
-  Future<void> getPhone(String id) {
-    // TODO: implement getPhone
-    throw UnimplementedError();
-  }
-
-  //check rules
-  @override
   Future<Phones> getPhones() async {
     return await phoneAPI.loadPhones();
   }
