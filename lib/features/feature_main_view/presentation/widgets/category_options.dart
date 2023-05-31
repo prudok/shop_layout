@@ -15,52 +15,43 @@ class CategoryOptions extends StatefulWidget {
 
 class _CategoryOptionsState extends State<CategoryOptions> {
   int _selectedIndex = 0;
+  final _categories = [
+    ['Phones', AssetPaths.smartPhone],
+    ['Computer', AssetPaths.computer],
+    ['Health', AssetPaths.pulsingHeart],
+    ['Books', AssetPaths.books],
+    ['Computer', AssetPaths.computer],
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 110.h,
       width: double.infinity,
-      child: ListView.builder(
+      child: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         scrollDirection: Axis.horizontal,
-        itemCount: 1,
+        itemCount: _categories.length,
         itemBuilder: (BuildContext context, int index) {
           return Row(
             children: [
-              SizedBox(width: 23.w),
-              //TODO: implement color changing 
-              const CategoryButton(
-                title: 'Phones',
-                imagePath: AssetPaths.smartPhone,
-                isPressed: true,
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
+                child: CategoryItem(
+                  title: _categories[index].first,
+                  imagePath: _categories[index].last,
+                  isPressed: _selectedIndex == index,
+                ),
               ),
-              SizedBox(width: 23.w),
-              const CategoryButton(
-                title: 'Computer',
-                imagePath: AssetPaths.computer,
-                isPressed: false,
-              ),
-              SizedBox(width: 23.w),
-              const CategoryButton(
-                title: 'Health',
-                imagePath: AssetPaths.pulsingHeart,
-                isPressed: false,
-              ),
-              SizedBox(width: 23.w),
-              const CategoryButton(
-                title: 'Books',
-                imagePath: AssetPaths.books,
-                isPressed: false,
-              ),
-              SizedBox(width: 23.w),
-              const CategoryButton(
-                title: 'Computer',
-                imagePath: AssetPaths.smartPhone,
-                isPressed: false,
-              ),
-              SizedBox(width: 23.w),
             ],
           );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return SizedBox(width: 23.w);
         },
       ),
     );

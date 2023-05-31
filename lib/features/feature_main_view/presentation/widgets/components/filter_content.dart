@@ -18,9 +18,18 @@ class FilterContent extends StatelessWidget {
         SizedBox(height: 27.h),
         const Column(
           children: [
-            FilterItem(label: 'Brand'),
-            FilterItem(label: 'Price'),
-            FilterItem(label: 'Size'),
+            FilterItem(
+              label: 'Brand',
+              items: ['Apple', 'Samsung', 'Nokia'],
+            ),
+            FilterItem(
+              label: 'Price',
+              items: ['100-400\$', '400-900\$', '900-1200\$'],
+            ),
+            FilterItem(
+              label: 'Size',
+              items: ['100-300', '300-450', '450-600'],
+            ),
           ],
         ),
       ],
@@ -30,8 +39,9 @@ class FilterContent extends StatelessWidget {
 
 class FilterItem extends StatelessWidget {
   final String label;
+  final List<String> items;
 
-  const FilterItem({super.key, required this.label});
+  const FilterItem({super.key, required this.label, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -49,30 +59,30 @@ class FilterItem extends StatelessWidget {
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
           ),
-          value: 'Samsung',
+          value: items[0],
           items: [
             DropdownMenuItem(
-              value: 'Samsung',
+              value: items[0],
               child: SizedBox(
                 width: 260.w,
                 height: 37.h,
-                child: const Text('Samsung'),
+                child: Text(items[0]),
               ),
             ),
             DropdownMenuItem(
-              value: 'Samsung1',
+              value: items[1],
               child: SizedBox(
                 width: 260.w,
                 height: 37.h,
-                child: const Text('Apple'),
+                child: Text(items[1]),
               ),
             ),
             DropdownMenuItem(
-              value: 'Samsung2',
+              value: items[2],
               child: SizedBox(
                 width: 260.w,
                 height: 37.h,
-                child: const Text('Nokia'),
+                child: Text(items[2]),
               ),
             ),
           ],

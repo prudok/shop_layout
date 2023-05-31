@@ -17,10 +17,7 @@ class HotSalesPhoneRow extends StatelessWidget {
     return SizedBox(
       width: 378.w,
       height: 182.h,
-      child: phoneSellerState.when(
-        initial: () {
-          return null;
-        },
+      child: phoneSellerState.maybeWhen(
         loading: () {
           return Padding(
             padding: EdgeInsets.only(left: 15.w),
@@ -45,10 +42,14 @@ class HotSalesPhoneRow extends StatelessWidget {
             itemCount: phones.homeStorePhones!.length,
             itemBuilder: (context, index) => HotSalePreview(
               phone: phones.homeStorePhones![index],
-            ), separatorBuilder: (BuildContext context, int index) { 
-              return SizedBox(width:  15.w);
-             },
+            ),
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(width: 15.w);
+            },
           );
+        },
+        orElse: () {
+          return null;
         },
       ),
     );

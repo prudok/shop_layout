@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/features/feature_main_view/presentation/widgets/bottom_navigation_bars/bottom_shop_navigation_bar.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../core/constants/frame_sizes/frame_size.dart';
+import '../widgets/bottom_navigation_bars/bottom_shop_navigation_bar.dart';
 import '../widgets/category_options.dart';
 import '../widgets/geo_location_info.dart';
 import '../widgets/grid/best_seller_grid.dart';

@@ -36,7 +36,6 @@ class BuyProductButton extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        productDetailBloc.add(ProductDetailEvent.buy(phone: phone));
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => const UserCartView(),

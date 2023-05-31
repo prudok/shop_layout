@@ -41,7 +41,7 @@ class HotSalePreview extends StatelessWidget {
               SizedBox(height: 10.h),
               phone.isNew
                   ? CircleAvatar(
-                      radius: 13.h,
+                      radius: 15.h,
                       backgroundColor: AppColors.orange,
                       child: Text(
                         'New',
@@ -50,7 +50,7 @@ class HotSalePreview extends StatelessWidget {
                         ),
                       ),
                     )
-                  : SizedBox(height: 26.h),
+                  : SizedBox(height: 30.h),
               SizedBox(height: 9.h),
               Text(
                 phone.title,
