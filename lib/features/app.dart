@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
 import 'package:shop_layout/features/user_cart/presentation/views/user_cart_view.dart';
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 
 import '../config/themes/light_theme/light_theme.dart';
 import 'home/presentation/bloc/phone_seller_bloc.dart';
@@ -36,7 +38,29 @@ class ShopLayout extends StatelessWidget {
           ),
         );
       },
-      child: const UserCartView(),
+      child: SplashPage(),
+    );
+  }
+}
+
+class SplashPage extends StatefulWidget {
+  SplashPage({Key? key}) : super(key: key);
+
+  @override
+  _SplashPageState createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  Widget build(BuildContext context) {
+    return EasySplashScreen(
+      backgroundColor: AppColors.deepPurple,
+      navigator: const HomeView(),
+      durationInSeconds: 2,
+      logo: Image.asset(
+        'assets/images/logo.png',
+        height: 300.h,
+      ),
     );
   }
 }
