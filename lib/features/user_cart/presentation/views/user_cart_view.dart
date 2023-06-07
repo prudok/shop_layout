@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
-import '../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../widgets/app_bars/user_cart_app_bar.dart';
+import '../widgets/titles/button_title.dart';
+import '../widgets/titles/my_cart_title.dart';
 import '../widgets/transaction_detail_row.dart';
 import '../widgets/user_product_builder.dart';
 
@@ -22,14 +23,7 @@ class UserCartView extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Text(
-                'My Cart',
-                style: AppTextStyles.titleLarge.copyWith(
-                  color: AppColors.deepPurple,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                ),
-              ),
+              child: const MyCartTitle(),
             ),
             SizedBox(height: 40.h),
             Container(
@@ -61,15 +55,7 @@ class UserCartView extends StatelessWidget {
                   ),
                   SizedBox(height: 41.h),
                   ElevatedButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Items Ordered'),
-                          backgroundColor: AppColors.deepPurple,
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical: 11.h,
@@ -80,12 +66,7 @@ class UserCartView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Text(
-                      'Checkout',
-                      style: AppTextStyles.bodyLarge.copyWith(
-                        color: AppColors.white,
-                      ),
-                    ),
+                    child: const BuyButtonTitle(),
                   ),
                   SizedBox(height: 41.h),
                 ],

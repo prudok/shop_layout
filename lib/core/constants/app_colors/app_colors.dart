@@ -8,6 +8,8 @@ class AppColors {
   static const Color darkGrey = Colors.grey;
   static const Color lightGrey = Color.fromRGBO(246, 246, 246, 1);
   static const Color lighPurple = Color.fromRGBO(40, 40, 67, 1);
+  static Color shimmerGreyColor = Colors.grey[300]!;
+  static Color shimmerWhiteColor = Colors.grey[100]!;
   static Color shadow = Colors.grey.withOpacity(0.1);
   static Color black = Colors.black;
 }

@@ -5,11 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../core/constants/app_colors/app_colors.dart';
-import '../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../domain/entities/product_detail.dart';
 import '../bloc/product_detail_bloc.dart';
-import '../widgets/buttons/go_back_button.dart';
-import '../widgets/buttons/shop_button.dart';
+import '../widgets/app_bars/product_detail_appbar.dart';
 import '../widgets/carousel_item.dart';
 import '../widgets/detail_info_block.dart';
 
@@ -33,8 +31,8 @@ class ProductDetailView extends StatelessWidget {
               productDetailBlocState.maybeWhen(
                 loading: () {
                   return Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
+                    baseColor: AppColors.shimmerGreyColor,
+                    highlightColor: AppColors.shimmerWhiteColor,
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -68,31 +66,6 @@ class ProductDetailView extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class ProductDetailAppBar extends StatelessWidget {
-  const ProductDetailAppBar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const SliverAppBar(
-      floating: false,
-      backgroundColor: AppColors.white,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          GoBackButton(),
-          Text(
-            'Product Details',
-            style: AppTextStyles.titleLarge,
-          ),
-          ShopButton(),
-        ],
       ),
     );
   }
