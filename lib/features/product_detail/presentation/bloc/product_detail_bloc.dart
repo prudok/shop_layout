@@ -14,9 +14,9 @@ class ProductDetailBloc extends Bloc<ProductDetailEvent, ProductDetailState> {
     final productAPI = ProductDetailAPIImpl();
     final productRepository = ProductDetailRepositoryImpl(productAPI);
 
-    emit(const ProductDetailState.loading());
-    productRepository.getProductDetail().then((product) => emit(
-          ProductDetailState.loaded(product: product),
-        ));
+    // emit(const ProductDetailState.loading());
+    // productRepository.getProductDetail().then((product) => emit(
+    //       ProductDetailState.loaded(product: product),
+    //     ));
   }
 }
