@@ -1,4 +1,5 @@
 # Shop_layout
+E-commerce shop UI app with clean architecture 
 
 ## Features
 - Clean architecture
