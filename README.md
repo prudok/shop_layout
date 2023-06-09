@@ -14,9 +14,9 @@ E-commerce shop UI app with clean architecture
 - [cached_network_image](https://pub.dev/packages/cached_network_image)
 
 # Overview
-| Home view | Product detail view | User Cart | Filter option |
+| Home view | Product details view | User Cart | Filter option |
 |-----------|---------------|-------------|----------------|
-|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/7103903a-903f-4e74-875e-94b078d9176c.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/c87f8e3d-14d8-4495-94e1-b47cce3507e9.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/734d05e4-8104-4fb1-8470-30fd830aca31.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/75b2f83b-30a0-4cc7-b6c2-bb7d43b46013.png" width="250">|
+|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/11cd6987-aa3f-4834-a60c-f496054090d0.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/798ffe92-17a3-418e-853b-2bb5c1ecacd3.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/a398c0ce-dd53-4306-aa12-647e42682c09.png" width="250">|<img src="https://github.com/rel1nce/shop_layout/assets/101862863/83e14b10-45aa-48c0-8e25-2dc01695cda5.png" width="250">|
 
 # Demonstration
-[overview.webm](https://github.com/rel1nce/shop_layout/assets/101862863/954aea73-f34e-49fd-9f64-ae86c59916cd)
+[overview.webm](https://github.com/rel1nce/shop_layout/assets/101862863/dceb09d1-a049-47b6-9e02-ca51347d2331)
