@@ -1,11 +1,10 @@
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_layout/core/constants/app_colors/app_colors.dart';
-import 'package:shop_layout/features/user_cart/presentation/views/user_cart_view.dart';
-import 'package:easy_splash_screen/easy_splash_screen.dart';
 
 import '../config/themes/light_theme/light_theme.dart';
+import '../core/constants/app_colors/app_colors.dart';
 import 'home/presentation/bloc/phone_seller_bloc.dart';
 import 'home/presentation/views/home_view.dart';
 import 'product_detail/presentation/bloc/product_detail_bloc.dart';
@@ -54,6 +53,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
+      loaderColor: Colors.transparent,
       backgroundColor: AppColors.deepPurple,
       navigator: const HomeView(),
       durationInSeconds: 2,

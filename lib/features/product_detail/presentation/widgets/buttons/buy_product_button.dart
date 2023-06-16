@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constants/app_colors/app_colors.dart';
 import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
 import '../../../../user_cart/presentation/views/user_cart_view.dart';
-import '../../../domain/entities/product_detail.dart';
-import '../../bloc/product_detail_bloc.dart';
 
 class BuyProductButton extends StatelessWidget {
   const BuyProductButton({
@@ -15,14 +12,6 @@ class BuyProductButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productDetailBloc = context.watch<ProductDetailBloc>();
-    late final ProductDetail phone;
-    productDetailBloc.state.maybeWhen(
-      loaded: (ProductDetail product) {
-        phone = product;
-      },
-      orElse: () => null,
-    );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.orange,

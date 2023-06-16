@@ -27,9 +27,8 @@ mixin _$ProductDetail {
   List<String> get color => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
-  bool get isFavorites =>
-      throw _privateConstructorUsedError; //TODO: refactor line below
-  int get price => throw _privateConstructorUsedError; /////////////////////
+  bool get isFavorites => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
   String get sd => throw _privateConstructorUsedError;
   String get ssd => throw _privateConstructorUsedError;
@@ -297,10 +296,8 @@ class _$_ProductDetail with DiagnosticableTreeMixin implements _ProductDetail {
 
   @override
   final bool isFavorites;
-//TODO: refactor line below
   @override
   final int price;
-/////////////////////
   @override
   final double rating;
   @override
@@ -418,9 +415,9 @@ abstract class _ProductDetail implements ProductDetail {
   List<String> get images;
   @override
   bool get isFavorites;
-  @override //TODO: refactor line below
+  @override
   int get price;
-  @override /////////////////////
+  @override
   double get rating;
   @override
   String get sd;

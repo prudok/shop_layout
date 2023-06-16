@@ -14,11 +14,11 @@ class UserCartBloc extends Bloc<UserCartEvent, UserCartState> {
     final userCartAPI = UserCartAPIImpl();
     final userCartRepository = UserCartRepositoryImpl(userCartAPI);
 
-    // userCartRepository.loadCart().then((userCart) {
-    //   emit(UserCartState.loaded(userCart: userCart));
-    // });
-
-    on<UserCartEvent>((event, emit) {});
+    on<LoadCart>((event, emit) async {
+      await userCartRepository.loadCart().then((userCart) {
+        emit(UserCartState.loaded(userCart: userCart));
+      });
+    });
     on<UserCartEventAdd>((event, emit) => {});
     on<UserCartEventRemove>((event, emit) => {});
   }

@@ -12,7 +12,19 @@ class UserProductBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userCartBloc = context.watch<UserCartBloc>();
-    return userCartBloc.state.maybeWhen(
+    return userCartBloc.state.when(
+      initial: () {
+        userCartBloc.add(const LoadCart());
+        return SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: 300.h,
+          child: const Center(
+            child: CircularProgressIndicator(
+              color: AppColors.white,
+            ),
+          ),
+        );
+      },
       loaded: (userCart) {
         return SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -30,15 +42,6 @@ class UserProductBuilder extends StatelessWidget {
           ),
         );
       },
-      orElse: () => SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: 300.h,
-        child: const Center(
-          child: CircularProgressIndicator(
-            color: AppColors.white,
-          ),
-        ),
-      ),
     );
   }
 }

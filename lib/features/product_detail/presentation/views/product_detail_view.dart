@@ -16,7 +16,7 @@ class ProductDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productDetailBlocState = context.watch<ProductDetailBloc>().state;
+    final productDetailBloc = context.watch<ProductDetailBloc>();
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
@@ -28,7 +28,21 @@ class ProductDetailView extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             children: [
               SizedBox(height: 11.h),
-              productDetailBlocState.maybeWhen(
+              productDetailBloc.state.when(
+                initial: () {
+                  productDetailBloc.add(const LoadDetails());
+                  return Shimmer.fromColors(
+                    baseColor: AppColors.shimmerGreyColor,
+                    highlightColor: AppColors.shimmerWhiteColor,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: AppColors.white,
+                      ),
+                      height: 349.h,
+                    ),
+                  );
+                },
                 loading: () {
                   return Shimmer.fromColors(
                     baseColor: AppColors.shimmerGreyColor,
@@ -56,9 +70,6 @@ class ProductDetailView extends StatelessWidget {
                       );
                     },
                   );
-                },
-                orElse: () {
-                  return const SizedBox();
                 },
               ),
               SizedBox(height: 7.h),

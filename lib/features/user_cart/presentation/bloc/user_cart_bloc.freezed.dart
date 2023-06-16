@@ -19,6 +19,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() loadCart,
     required TResult Function() add,
     required TResult Function() remove,
   }) =>
@@ -26,6 +27,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? loadCart,
     TResult? Function()? add,
     TResult? Function()? remove,
   }) =>
@@ -33,6 +35,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? loadCart,
     TResult Function()? add,
     TResult Function()? remove,
     required TResult orElse(),
@@ -41,6 +44,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(LoadCart value) loadCart,
     required TResult Function(UserCartEventAdd value) add,
     required TResult Function(UserCartEventRemove value) remove,
   }) =>
@@ -48,6 +52,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(LoadCart value)? loadCart,
     TResult? Function(UserCartEventAdd value)? add,
     TResult? Function(UserCartEventRemove value)? remove,
   }) =>
@@ -55,6 +60,7 @@ mixin _$UserCartEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(LoadCart value)? loadCart,
     TResult Function(UserCartEventAdd value)? add,
     TResult Function(UserCartEventRemove value)? remove,
     required TResult orElse(),
@@ -118,6 +124,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() loadCart,
     required TResult Function() add,
     required TResult Function() remove,
   }) {
@@ -128,6 +135,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? loadCart,
     TResult? Function()? add,
     TResult? Function()? remove,
   }) {
@@ -138,6 +146,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? loadCart,
     TResult Function()? add,
     TResult Function()? remove,
     required TResult orElse(),
@@ -152,6 +161,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(LoadCart value) loadCart,
     required TResult Function(UserCartEventAdd value) add,
     required TResult Function(UserCartEventRemove value) remove,
   }) {
@@ -162,6 +172,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(LoadCart value)? loadCart,
     TResult? Function(UserCartEventAdd value)? add,
     TResult? Function(UserCartEventRemove value)? remove,
   }) {
@@ -172,6 +183,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(LoadCart value)? loadCart,
     TResult Function(UserCartEventAdd value)? add,
     TResult Function(UserCartEventRemove value)? remove,
     required TResult orElse(),
@@ -185,6 +197,119 @@ class _$_Started implements _Started {
 
 abstract class _Started implements UserCartEvent {
   const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$$LoadCartCopyWith<$Res> {
+  factory _$$LoadCartCopyWith(
+          _$LoadCart value, $Res Function(_$LoadCart) then) =
+      __$$LoadCartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadCartCopyWithImpl<$Res>
+    extends _$UserCartEventCopyWithImpl<$Res, _$LoadCart>
+    implements _$$LoadCartCopyWith<$Res> {
+  __$$LoadCartCopyWithImpl(_$LoadCart _value, $Res Function(_$LoadCart) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadCart implements LoadCart {
+  const _$LoadCart();
+
+  @override
+  String toString() {
+    return 'UserCartEvent.loadCart()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadCart);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() loadCart,
+    required TResult Function() add,
+    required TResult Function() remove,
+  }) {
+    return loadCart();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? loadCart,
+    TResult? Function()? add,
+    TResult? Function()? remove,
+  }) {
+    return loadCart?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? loadCart,
+    TResult Function()? add,
+    TResult Function()? remove,
+    required TResult orElse(),
+  }) {
+    if (loadCart != null) {
+      return loadCart();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(LoadCart value) loadCart,
+    required TResult Function(UserCartEventAdd value) add,
+    required TResult Function(UserCartEventRemove value) remove,
+  }) {
+    return loadCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(LoadCart value)? loadCart,
+    TResult? Function(UserCartEventAdd value)? add,
+    TResult? Function(UserCartEventRemove value)? remove,
+  }) {
+    return loadCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(LoadCart value)? loadCart,
+    TResult Function(UserCartEventAdd value)? add,
+    TResult Function(UserCartEventRemove value)? remove,
+    required TResult orElse(),
+  }) {
+    if (loadCart != null) {
+      return loadCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadCart implements UserCartEvent {
+  const factory LoadCart() = _$LoadCart;
 }
 
 /// @nodoc
@@ -226,6 +351,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() loadCart,
     required TResult Function() add,
     required TResult Function() remove,
   }) {
@@ -236,6 +362,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? loadCart,
     TResult? Function()? add,
     TResult? Function()? remove,
   }) {
@@ -246,6 +373,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? loadCart,
     TResult Function()? add,
     TResult Function()? remove,
     required TResult orElse(),
@@ -260,6 +388,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(LoadCart value) loadCart,
     required TResult Function(UserCartEventAdd value) add,
     required TResult Function(UserCartEventRemove value) remove,
   }) {
@@ -270,6 +399,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(LoadCart value)? loadCart,
     TResult? Function(UserCartEventAdd value)? add,
     TResult? Function(UserCartEventRemove value)? remove,
   }) {
@@ -280,6 +410,7 @@ class _$UserCartEventAdd implements UserCartEventAdd {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(LoadCart value)? loadCart,
     TResult Function(UserCartEventAdd value)? add,
     TResult Function(UserCartEventRemove value)? remove,
     required TResult orElse(),
@@ -334,6 +465,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() loadCart,
     required TResult Function() add,
     required TResult Function() remove,
   }) {
@@ -344,6 +476,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? loadCart,
     TResult? Function()? add,
     TResult? Function()? remove,
   }) {
@@ -354,6 +487,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? loadCart,
     TResult Function()? add,
     TResult Function()? remove,
     required TResult orElse(),
@@ -368,6 +502,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(LoadCart value) loadCart,
     required TResult Function(UserCartEventAdd value) add,
     required TResult Function(UserCartEventRemove value) remove,
   }) {
@@ -378,6 +513,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(LoadCart value)? loadCart,
     TResult? Function(UserCartEventAdd value)? add,
     TResult? Function(UserCartEventRemove value)? remove,
   }) {
@@ -388,6 +524,7 @@ class _$UserCartEventRemove implements UserCartEventRemove {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(LoadCart value)? loadCart,
     TResult Function(UserCartEventAdd value)? add,
     TResult Function(UserCartEventRemove value)? remove,
     required TResult orElse(),
