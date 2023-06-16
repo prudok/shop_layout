@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../user_cart_phone/user_cart_phone.dart';
+import 'user_cart_phone.dart';
 
 part 'user_cart.freezed.dart';
 part 'user_cart.g.dart';

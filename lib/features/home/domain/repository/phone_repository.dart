@@ -1,4 +1,4 @@
-import '../entities/phones/phones.dart';
+import '../entities/phones.dart';
 
 abstract class PhoneRepository {
   Future<Phones> getPhones();

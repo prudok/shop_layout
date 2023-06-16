@@ -1,4 +1,4 @@
-import '../../domain/entities/phones/phones.dart';
+import '../../domain/entities/phones.dart';
 import '../../domain/repository/phone_repository.dart';
 import '../datasource/phone_api/phone_api.dart';
 

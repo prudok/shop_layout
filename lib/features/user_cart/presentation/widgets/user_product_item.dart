@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors/app_colors.dart';
-import '../../../../core/constants/app_text_styles/app_text_styles.dart';
-import '../../../../core/constants/asset_paths/asset_paths.dart';
-import '../../domain/entities/user_cart_phone/user_cart_phone.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/constants/asset_paths.dart';
+import '../../domain/entities/user_cart_phone.dart';
 
 class UserProductItem extends StatelessWidget {
   final UserCartPhone userCartPhone;

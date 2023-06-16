@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/asset_paths/asset_paths.dart';
+import '../../../../../core/constants/asset_paths.dart';
 import '../product_feature.dart';
 
 class ProductFeaturesRow extends StatelessWidget {

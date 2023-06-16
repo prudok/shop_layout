@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/app_colors/app_colors.dart';
-import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../../../../core/constants/app_colors.dart';
+import '../../../../../core/constants/app_text_styles.dart';
 import '../../../../user_cart/presentation/widgets/buttons/go_back_button.dart';
 import '../buttons/shop_button.dart';
 

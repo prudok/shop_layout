@@ -1,8 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-import '../best_seller_phone/best_seller_phone.dart';
-import '../home_store_phone/home_store_phone.dart';
+import 'best_seller_phone.dart';
+import 'home_store_phone.dart';
+
 
 part 'phones.freezed.dart';
 part 'phones.g.dart';

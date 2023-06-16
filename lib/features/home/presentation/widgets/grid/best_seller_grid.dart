@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../../core/constants/app_colors.dart';
 import '../../bloc/phone_seller_bloc.dart';
 import '../components/phone_preview_block.dart';
 

@@ -1,4 +1,5 @@
-import '../../../home/domain/usecases/favorite_phone/favorite_phone.dart';
+
+import '../../../home/domain/usecases/favorite_phone.dart';
 
 class FavoriteProductImpl extends FavoritePhoneUseCase {
   @override

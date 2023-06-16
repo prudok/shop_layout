@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/constants/app_text_styles/app_text_styles.dart';
+import '../../../../../core/constants/app_text_styles.dart';
 import '../buttons/go_back_button.dart';
 import '../buttons/location_button.dart';
 

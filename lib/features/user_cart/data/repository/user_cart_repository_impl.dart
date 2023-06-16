@@ -1,4 +1,4 @@
-import '../../domain/entities/user_cart/user_cart.dart';
+import '../../domain/entities/user_cart.dart';
 import '../../domain/repository/user_cart_repository.dart';
 import '../datasource/user_cart_api.dart';
 

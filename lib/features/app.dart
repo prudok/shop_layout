@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../config/themes/light_theme/light_theme.dart';
-import '../core/constants/app_colors/app_colors.dart';
+import '../config/themes/light_theme.dart';
+import '../core/constants/app_colors.dart';
 import 'home/presentation/bloc/phone_seller_bloc.dart';
 import 'home/presentation/views/home_view.dart';
 import 'product_detail/presentation/bloc/product_detail_bloc.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../core/constants/app_colors.dart';
 import 'buttons/buy_product_button.dart';
 import 'buttons/like_button.dart';
 import 'detail_rating_bar.dart';

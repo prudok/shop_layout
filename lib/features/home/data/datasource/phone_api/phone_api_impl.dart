@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../../../../core/constants/api_constants/api_constants.dart';
-import '../../../domain/entities/phones/phones.dart';
+import '../../../../../core/constants/api_constants.dart';
+import '../../../domain/entities/phones.dart';
 import 'phone_api.dart';
 
 class PhoneAPIImpl extends PhoneAPI {

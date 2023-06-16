@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors/app_colors.dart';
+import '../../../../core/constants/app_colors.dart';
 import '../widgets/app_bars/user_cart_app_bar.dart';
 import '../widgets/titles/button_title.dart';
 import '../widgets/titles/my_cart_title.dart';
