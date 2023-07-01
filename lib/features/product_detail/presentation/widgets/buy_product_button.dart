@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/constants/app_colors.dart';
-import '../../../../../core/constants/app_text_styles.dart';
-import '../../../../user_cart/presentation/views/user_cart_view.dart';
+import '../../../../core/app_colors.dart';
+import '../../../../core/app_text_styles.dart';
+import '../../../user_cart/presentation/views/user_cart_view.dart';
 
 class BuyProductButton extends StatelessWidget {
   const BuyProductButton({

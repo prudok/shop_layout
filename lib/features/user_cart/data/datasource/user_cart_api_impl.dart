@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../../../core/constants/api_constants.dart';
+import '../../../../core/api_constants.dart';
 import '../../domain/entities/user_cart.dart';
 import 'user_cart_api.dart';
 

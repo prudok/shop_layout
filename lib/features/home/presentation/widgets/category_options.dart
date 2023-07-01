@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/asset_paths.dart';
-import 'buttons/category_button.dart';
+import '../../../../core/asset_paths.dart';
+import 'category_button.dart';
 
 class CategoryOptions extends StatefulWidget {
   const CategoryOptions({

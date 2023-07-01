@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/app_colors.dart';
+import '../core/app_colors.dart';
 
 ThemeData lightTheme() => ThemeData.light(useMaterial3: true).copyWith(
       appBarTheme: const AppBarTheme().copyWith(

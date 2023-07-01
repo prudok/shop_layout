@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../config/themes/light_theme.dart';
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_text_styles.dart';
-import '../../../../core/constants/asset_paths.dart';
-import 'components/filter_content.dart';
+import '../../../../config/light_theme.dart';
+import '../../../../core/app_colors.dart';
+import '../../../../core/app_text_styles.dart';
+import '../../../../core/asset_paths.dart';
+import 'filter_content.dart';
 
 class GeoLocationInfo extends StatelessWidget {
   const GeoLocationInfo({

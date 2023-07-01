@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/app_text_styles.dart';
+import '../../../../core/app_text_styles.dart';
 
 class SelectModelsTitle extends StatelessWidget {
   const SelectModelsTitle({

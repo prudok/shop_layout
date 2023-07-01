@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../../../core/app_colors.dart';
 import '../../domain/entities/product_detail.dart';
 import '../bloc/product_detail_bloc.dart';
-import '../widgets/app_bars/product_detail_appbar.dart';
+import '../widgets/product_detail_appbar.dart';
 import '../widgets/carousel_item.dart';
 import '../widgets/detail_info_block.dart';
 

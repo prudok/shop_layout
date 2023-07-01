@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors.dart';
-import '../widgets/app_bars/user_cart_app_bar.dart';
-import '../widgets/titles/button_title.dart';
-import '../widgets/titles/my_cart_title.dart';
+import '../../../../core/app_colors.dart';
+import '../widgets/user_cart_app_bar.dart';
+import '../widgets/button_title.dart';
+import '../widgets/my_cart_title.dart';
 import '../widgets/transaction_detail_row.dart';
 import '../widgets/user_product_builder.dart';
 

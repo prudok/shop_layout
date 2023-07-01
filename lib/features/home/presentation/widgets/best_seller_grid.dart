@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../../core/constants/app_colors.dart';
-import '../../bloc/phone_seller_bloc.dart';
-import '../components/phone_preview_block.dart';
+import '../../../../core/app_colors.dart';
+import '../bloc/phone_seller_bloc.dart';
+import 'phone_preview_block.dart';
 
 class BestSellerGrid extends StatelessWidget {
   const BestSellerGrid({

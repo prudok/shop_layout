@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors.dart';
-import 'buttons/buy_product_button.dart';
-import 'buttons/like_button.dart';
+import '../../../../core/app_colors.dart';
+import 'buy_product_button.dart';
+import 'like_button.dart';
 import 'detail_rating_bar.dart';
-import 'rows/options_of_models_row.dart';
-import 'rows/options_row.dart';
-import 'rows/product_features_row.dart';
-import 'titles/select_model_title.dart';
+import 'options_of_models_row.dart';
+import 'options_row.dart';
+import 'product_features_row.dart';
+import 'select_model_title.dart';
 
 class DetailInfoBlock extends StatelessWidget {
   const DetailInfoBlock({

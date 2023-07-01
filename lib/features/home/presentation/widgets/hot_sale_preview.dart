@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/app_colors.dart';
+import '../../../../core/app_text_styles.dart';
 import '../../../product_detail/presentation/views/product_detail_view.dart';
 import '../../domain/entities/home_store_phone.dart';
 
